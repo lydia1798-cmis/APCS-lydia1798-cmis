@@ -13,7 +13,9 @@ public class Fundamentals
         byte byteExample = 58;
         System.out.println( "byte: " + byteExample);
         String byteDescription = "Byte is a primitive data type that is an 8-bit signed two component integer type. \nIt has a minimum value of -128 and a maximum value of 127 and is ussually used to save memory.";
-        System.out.println( "Description: " + byteDescription + "\n");
+        System.out.println( "Description: " + byteDescription);
+        String byte3Examples = "1)Byte could be used to represent a list of numbers for a survey. \n2)Byte could be used to perform simple calculations. \n3)Byte can be used in arrays. \n"; 
+        System.out.println( "3 Real World Examples: \n" + byte3Examples);
 
         short shortExample = -23678;
         System.out.println( "short: " + shortExample);

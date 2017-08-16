@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 
 public class Fundamentals
 
@@ -5,7 +6,46 @@ public class Fundamentals
 
     public static void main (String[] args){
         dataTypes();
-    }
+        
+        System.out.println("Int: ");
+        int addSum = add(3, 4);
+        System.out.println("Int Sum: " + addSum);
+        
+        String intSubInputA = JOptionPane.showInputDialog( "Enter a non-decimal number to subtract:" );
+        String intSubInputB = JOptionPane.showInputDialog( "Enter a second non-decimal number to subtract:" );
+        int intDifference = sub(Integer.parseInt(intSubInputA), Integer.parseInt(intSubInputB));
+        System.out.println("Int Difference: " + intDifference);
+        
+        int mulProduct = multiply(10, 5);
+        System.out.println("Int Product: " + mulProduct);
+        
+        String intDivInputA = JOptionPane.showInputDialog( "Enter a non-decimal number to divide:" );
+        String intDivInputB = JOptionPane.showInputDialog( "Enter a second non-decimal number to divide:" );
+        int intQuiotient = division(Integer.parseInt(intDivInputA), Integer.parseInt(intDivInputB));
+        System.out.println("Int Difference: " + intQuiotient);
+        
+        int divQuotient = division(45, 9);
+        System.out.println("Int Quotient: " + divQuotient + "\n");
+        
+        
+        System.out.println("Double: ");
+        double sum = addDouble(5, 6);
+        System.out.println("Double Sum: " + sum);
+        
+        String subInputA = JOptionPane.showInputDialog( "Enter a decimal number to subtract:" );
+        String subInputB = JOptionPane.showInputDialog( "Enter a second decimal number to subtract:" );
+        double difference = subDouble(Double.parseDouble(subInputA), Double.parseDouble(subInputB));
+        System.out.println("Double Difference: " + difference);
+        
+        double product = multiplyDouble(59, 6);
+        System.out.println("Double Product: " + product);
+        
+        String divInputA = JOptionPane.showInputDialog( "Enter a decimal number to divide:" );
+        String divInputB = JOptionPane.showInputDialog( "Enter a second decimal number to divide:" );
+        double quotient = divisionDouble(Double.parseDouble(divInputA), Double.parseDouble(divInputB));
+        System.out.println("Double Quotient: " + quotient);
+
+    } //end main method
 
     public static void dataTypes(){
         System.out.println( "dataTypes:\n" );
@@ -14,7 +54,7 @@ public class Fundamentals
         System.out.println( "byte: " + byteExample);
         String byteDescription = "Byte is a primitive data type that is an 8-bit signed two component integer type. \nIt has a minimum value of -128 and a maximum value of 127 and is ussually used to save memory.";
         System.out.println( "Description: " + byteDescription);
-        String byte3Examples = "1)Byte could be used to represent a list of numbers for a survey. \n2)Byte could be used to perform simple calculations. \n3)Byte can be used in arrays. \n"; 
+        String byte3Examples = "1)Byte could be used to represent a list of numbers for a survey. \n2)Byte could be used to perform simple calculations. \n3)Byte can be used for the number of classes a student can take in highschool. \n"; 
         System.out.println( "3 Real World Examples: \n" + byte3Examples);
 
         short shortExample = -23678;
@@ -54,4 +94,46 @@ public class Fundamentals
 
         
     }
+    
+    public static int add(int a, int b){
+        int sum = a + b;
+        return sum;
+    }
+    
+    public static int sub(int a, int b){
+        int difference = a - b;
+        return difference;
+    }
+    
+    public static int multiply(int a, int b){
+        int multiply = a * b;
+        return multiply;
+    }
+    
+    public static int division(int a, int b){
+        int divide = a / b;
+        return divide;
+    }
+    
+     public static double addDouble(double a, double b){
+        double sum = a + b;
+        return sum;
+    }
+    
+    public static double subDouble(double a, double b){
+        double difference = a - b;
+        return difference;
+    }
+    
+    public static double multiplyDouble(double a, double b){
+        double multiply = a * b;
+        return multiply;
+    }
+    
+    public static double divisionDouble(double a, double b){
+        double divide = a / b;
+        return divide;
+    }
+    
+    
 }

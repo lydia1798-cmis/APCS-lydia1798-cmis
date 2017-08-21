@@ -22,11 +22,8 @@ public class Fundamentals
         String intDivInputA = JOptionPane.showInputDialog( "Enter a non-decimal number to divide:" );
         String intDivInputB = JOptionPane.showInputDialog( "Enter a second non-decimal number to divide:" );
         int intQuiotient = division(Integer.parseInt(intDivInputA), Integer.parseInt(intDivInputB));
-        System.out.println("Int Difference: " + intQuiotient);
-        
-        int divQuotient = division(45, 9);
-        System.out.println("Int Quotient: " + divQuotient + "\n");
-        
+        System.out.println("Int Difference: " + intQuiotient + "\n");
+ 
         
         System.out.println("Double: ");
         double sum = addDouble(5, 6);
@@ -43,7 +40,16 @@ public class Fundamentals
         String divInputA = JOptionPane.showInputDialog( "Enter a decimal number to divide:" );
         String divInputB = JOptionPane.showInputDialog( "Enter a second decimal number to divide:" );
         double quotient = divisionDouble(Double.parseDouble(divInputA), Double.parseDouble(divInputB));
-        System.out.println("Double Quotient: " + quotient);
+        System.out.println("Double Quotient: " + quotient + "\n");
+        
+        String a = JOptionPane.showInputDialog( "Enter any non-decimal number: ");
+        String b = JOptionPane.showInputDialog( "Enter any non-decimal number: ");
+        System.out.println("Compare: ");
+        compare(Integer.parseInt(a), Integer.parseInt(b));
+        
+        String a2 = JOptionPane.showInputDialog( "Enter any non-decimal number: ");
+        System.out.println("evenOddZero: " +  evenOddZero(Integer.parseInt(a2)));
+
 
     } //end main method
 
@@ -94,7 +100,7 @@ public class Fundamentals
 
         
     }
-    
+    //end of data types
     public static int add(int a, int b){
         int sum = a + b;
         return sum;
@@ -134,6 +140,47 @@ public class Fundamentals
         double divide = a / b;
         return divide;
     }
+    //end of math
     
+    public static void compare(int a, int b){
+        String output;
+        if (a > b) {
+            output = ("The value of a is " + Integer.toString(a) + " and it is greater than b whose value is " + Integer.toString(b) + ".\n");
+            System.out.println(output);
+        }
+        else if (b > a) {
+            output = ("The value of a is " + Integer.toString(a) + " and it is less than b whose value is " + Integer.toString(b) + ".\n");
+            System.out.println(output);
+        }
+        else if (a == b) {
+            output = ("The vaule of a is " + Integer.toString(a) + " and it is equal to b whose vaule is " + Integer.toString(b) + ".\n");
+            System.out.println(output);
+        }
+
+    }
     
+    public static int evenOddZero(int a ){
+       int output;
+       if (a == 0){
+           output = 0;
+       }
+       
+       if (a % 2 == 0){
+           output = 1;
+        } else {
+            output = -1;
+        }
+       return output;    
+    }
+    
+    public static void squareTable(){
+        for(int x = 1; x < 11;x = x + 1){
+            int squared = x * x;
+            System.out.println(x + "\t" + squared + "\t" + (int)Math.ceil(Math.random() * (squared - x) + x));
+    }
+    }
+    /*public static void triangleNumber(a){
+        for(int x = a; y = x + 1; y <= x){
+            System.out.println(
+    }*/
 }

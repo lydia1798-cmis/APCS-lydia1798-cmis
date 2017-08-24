@@ -49,6 +49,7 @@ public class Fundamentals
         
         String a2 = JOptionPane.showInputDialog( "Enter any non-decimal number: ");
         System.out.println("evenOddZero: " +  evenOddZero(Integer.parseInt(a2)));
+        
 
 
     } //end main method
@@ -159,7 +160,7 @@ public class Fundamentals
 
     }
     
-    public static int evenOddZero(int a ){
+    public static int evenOddZero(int a){
        int output;
        if (a == 0){
            output = 0;
@@ -173,14 +174,58 @@ public class Fundamentals
        return output;    
     }
     
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public int sampleMethod(int y)
+    {
+        // put your code here
+        return y;
+    }
+
     public static void squareTable(){
-        for(int x = 1; x < 11;x = x + 1){
+        for(int x = 1; x < 11; x = x + 1){
             int squared = x * x;
             System.out.println(x + "\t" + squared + "\t" + (int)Math.ceil(Math.random() * (squared - x) + x));
     }
     }
-    /*public static void triangleNumber(a){
-        for(int x = a; y = x + 1; y <= x){
-            System.out.println(
-    }*/
+    public static int triangleNumber(int a){
+        int x;
+        int n = 0;
+        for(x = a; x > 0; x = x - 1){ 
+        n = n + x;   
+       } 
+    return n;
+   }
+   public static int pyramidNumber(int a){
+       int x = a;
+       int n = 0;
+       while(x > 0){
+           n = n + (x * x);
+           x = x - 1;
+        }
+        return n;
+   }
+    public static String checkerboard(int w,int h){
+        double wHash = 0;
+        /*return new String(new char[w]).replace("\0", "-");
+        for(; w > 0; w = w - 1){
+           System.out.print( "-" ); 
+        }
+        if(w % 2 != 0){
+            wHash = w / 2;
+            wHash = wHash + 0.5;*/
+        for(;h > 0; h--){
+            System.out.print(".");
+            for(;w > 0; w--){
+                System.out.print(".");
+            }
+            System.out.print("\n");
+        }
+   
+        return "whyyyyy";
+    }
 }

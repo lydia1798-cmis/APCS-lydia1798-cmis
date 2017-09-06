@@ -57,23 +57,28 @@ public class Fundamentals
         System.out.println( "byte: " + byteExample);
         String byteDescription = "Byte is a primitive data type that is an 8-bit signed two component integer type. \nIt has a minimum value of -128 and a maximum value of 127 and is ussually used to save memory.";
         System.out.println( "Description: " + byteDescription);
-        String byte3Examples = "1)Byte could be used to represent a list of numbers for a survey. \n2)Byte could be used to perform simple calculations. \n3)Byte can be used for the number of classes a student can take in highschool. \n"; 
+        String byte3Examples = "1)Byte could be used to represent the number of keys on a keyoard. \n2)Byte could be used to represent the number of letters in the alphabet. \n3)Byte can be used for the number of classes a student can take in highschool. \n"; 
         System.out.println( "3 Real World Examples: \n" + byte3Examples);
 
         short shortExample = -23678;
         System.out.println( "short: " + shortExample);
         String shortDescription = "Short is a primitive data type that is a 16-bit two's completment integer. \nIt has a minimum value of -2^15 and a maximum value of 2^15 -1 and is also used to save memory as it is 2 times smaller than an integer.";
         System.out.println( "Description: " + shortDescription + "\n");
+        String short3Examples = "1)Short could be used to represent the number of hours in a week. \n2)Short could be used to represent the number of of minutes in a week. \n3)Short could also be used to represent the number of seconds in 2 minutes.";
+        System.out.println("3 Real World Examples: \n" + short3Examples);
 
         int intExample = 45758678; 
         System.out.println( "int: " + intExample);
         String intDescription = "Int is short for integer and is a primitive data type. It is a 32-bit signed two's complement integer. \nIt has a minimum value is -2^31 and a maximum value of 2^31 -1.";
         System.out.println( "Description: " + intDescription + "\n");
+        String int3Examples = "1)Int could be used to represent the number of seconds in a week. \n2)Int can be used for calulating whether the number of seconds in a week in even or odd. \n3)Int can also be use.";
+        System.out.println("3 Real World Examples: \n" + int3Examples);
 
         long longExample = -2^50;
         System.out.println("long: " + longExample);
         String longDescription = "Long is a primitive data type that is a a 64-bit signed two's complement integer. \nIt has a minimum value of -2^63 and a maximum value of 2^63 -1 and is used when you need a wider range than provided for by int.";
         System.out.println( "Description: " + longDescription + "\n");
+        String long3Examples = "1)Long can be used for 
 
         float floatExample = 56.6f;
         System.out.println("float: " + floatExample);
@@ -220,41 +225,63 @@ public class Fundamentals
     }
 
     public static String checkerboard(int w,int h){
-        double wHash = 0;
-        double x = w;
-        double b = w + 2;
         String r = "";
-        double plus = 1;;
         r += firstLine(w);
-        /*return new String(new char[w]).replace("\0", "-");
-        for(; w > 0; w = w - 1){
-        System.out.print( "-" ); 
+        int randomW = (int) (Math.random() * w);
+        int randomH = (int) (Math.random() * h);
+        if (randomW % 2 != 0 && randomH % 2 == 0){
+            if(randomH == h){
+                randomH--;
+            }
+            else{
+                randomH++;
+            }}
+        if (randomW % 2 == 0 && randomH % 2 != 0){
+            if(randomH == h){
+                randomH--;
+            }
+            else{
+                randomH++;
+            }
         }
-        if(w % 2 != 0){
-        wHash = w / 2;
-        wHash = wHash + 0.5;*/
-        for(;h > 0; h--){
-            x = w;
-            for(;w == x;){
-                r += "|";
-                while(x > 0){ 
-                    if(x % 2 != 0){
-                        r += "#";
-                        r +=" ";}
+        
+        /*else if(randomW % 2 == 0 && randomH % 2 != 0){
+            randomH++;
+            randomW++;
+        }
+        else if(randomW % 2 == 0 && randomH % 2 != 0 && randomH == h){
+            randomH--;
+        }
+        else if(randomW % 2 == 0 && randomH % 2 == 0 && randomH < h){
+            randomH++;
+            randomW++;
+        }
+        else{
+            randomH = randomH;
+            randomW = randomW;
+        }*/
+        for(int y = 0;y < h; y++){
+            r += "|";
+            for(int x = 0; x < w; x++){
+                if(((y % 2 == 0) && (x % 2 != 0)) || ((y % 2 != 0) && (x % 2 == 0))){
+                    r += " ";
+                }
+                else{
+                    if(randomW == x && randomH == y){
+                        r += "" + (int) (Math.random() * 9);
+                    }
                     else{
-                        r += " ";
                         r += "#";
                     }
-                    x--;
                 }
-                r +="|\n";
             }
-
+            r +="|\n";
         }
-        r += firstLine(w);
+        r += firstLine(w) ;
+    
         System.out.print(r);
         return r;
-    }
-
+    }   
 }
+
 

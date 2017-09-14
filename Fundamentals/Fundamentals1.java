@@ -1,6 +1,6 @@
 import javax.swing.JOptionPane;
 
-public class Fundamentals
+public class Fundamentals1
 
 {
 
@@ -78,28 +78,37 @@ public class Fundamentals
         System.out.println("long: " + longExample);
         String longDescription = "Long is a primitive data type that is a a 64-bit signed two's complement integer. \nIt has a minimum value of -2^63 and a maximum value of 2^63 -1 and is used when you need a wider range than provided for by int.";
         System.out.println( "Description: " + longDescription + "\n");
-        String long3Examples = "1)Long can be used for 
+        String long3Examples = "1)Long can be used for the number of seconds in a year,\n the number of seconds in two years,\n and in three years.";
+        System.out.println("3 Real World Examples: \n" + long3Examples);
 
         float floatExample = 56.6f;
         System.out.println("float: " + floatExample);
         String floatDescription = "Float is a primitve data type that is single-presicion 32-bit IEEE 754 floating point. \nA float can be used when working with decimals.\nWhen used in java, there must be an 'f' after the desired number.";
         System.out.println( "Description: " + floatDescription + "\n");
+        String float3Examples = "1)Float can be used to divide the number of seconds in 3 years by the number of seconds in 5.5 years.\n 2)Can be used to divide the 4.3 decades by 5.5 decades. \n3) Can also be used to find the what 12.3 decades divided by 1.11111111111111112 decades is.";
+        System.out.println( "3 Real World Examples: \n" + float3Examples);
 
         double doubleExample = 78889.87;
         System.out.println("double: " + doubleExample);
         String doubleDescription = "Double is a primitive data type that is a double-precicion 64-bit IEE 754 floating point. \nIt can be used when working with big decimals as is the default primitive data type for decimals.";
         System.out.println( "Description: " + doubleDescription + "\n");
+        String double3Examples = "1)Double can be used to divide the number of seconds in 2.11 years by the number of miliseconds on 2 years. \n2)Double can also be used to divide Bill Gates's net worth by Mark Zuckerberg's net worth, down to the decimal. \n3)Double can also be used to represent the amount of debt the USA has......";
+        System.out.println( "3 Real World Examples: \n" + double3Examples);
 
         boolean booleanExample = true;
         System.out.println("boolean: " + booleanExample);
         String booleanDescription = "Boolean is the smallest primitive data type. \nBoolean only has two possible values, true or false; the default being false.";
         System.out.println( "Description: " + booleanDescription + "\n");
-
+        String boolean3Examples = "1)Boolean can tell whether or not I want pizza right now. \n2)Boolean can be used to tell whether or not I want ice cream. \n3)Boolean can be used to tell whether or not I need coffee right now.";
+        System.out.println( "3 Real World Examples: \n" + boolean3Examples);
+        
         char charExample = 'a';
         System.out.println("char: " + charExample);
         String charDescription = "Char is a primitive data type that is a single 16-bit Unicode character. \nIt has a minimum value of \u0000 (0) and a maximum value of \uffff (65,535 inclusive). \nChar is used to store any type of character.";
         System.out.println( "Description: " + charDescription + "\n");
-
+        String char3Examples = "1)Char can be used to show the first initial of my first name. \n2)Char can be used to show the first inital of my middle name. \n3)Char can be used to show the first inital of my last name.";
+        System.out.println( "3 Real World Examples: \n" + char3Examples);
+        
     }
     //end of data types
     public static int add(int a, int b){

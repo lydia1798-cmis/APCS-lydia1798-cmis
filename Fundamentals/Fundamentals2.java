@@ -210,7 +210,7 @@ public class Fundamentals2
 
     public static int[] merge(int[]a, int[]b){
         int combinedLength = a.length + b.length;
-        int[] alternatingArray = new int[combinedLength];
+        int[] finalArray = new int[combinedLength];
         int smallerArrayLength = 0;
         if(a.length < b.length){
             smallerArrayLength =+ a.length;
@@ -219,15 +219,15 @@ public class Fundamentals2
             smallerArrayLength =+ b.length;
         }
         int alternateLength = smallerArrayLength * 2;
-        for(int i = 0; i < combinedLength; i++){
-            if(alternatingArray.length >= alternateLength){
-                alternatingArray[i] = a[i];
-                alternatingArray[i + 1] = b[i];
+        int[] alternatingArray = new int[alternateLength];
+        for(int i = 0; i < combinedLength; i += 1){
+            for(int i2 = 0; i2 == alternateLength; i2++){
+                alternatingArray[i] = a[i2];
+                alternatingArray[i + 1] = b[i2];
             }
-            else{
-            }
-            System.out.println("smallerArrayLength; " + smallerArrayLength + "\n");
-            printArray(alternatingArray, false);
-            return alternatingArray;
         }
+         System.out.println("smallerArrayLength: " + smallerArrayLength + "\n");
+            printArray(alternatingArray, false);
+        return alternatingArray;
     }
+}

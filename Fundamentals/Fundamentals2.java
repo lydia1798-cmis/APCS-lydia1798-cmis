@@ -9,8 +9,8 @@ public class Fundamentals2
         System.out.println(intArray[0] + "\n" + doubleArray[2] + "\n" + stringArray[4] + "\n");
 
         System.out.println("#2:");
-        int[] arrayI = new int[]{2, 4, 6, 8, 3};
-        int[] arrayI2 = new int[]{1, 3, 5, 9};
+        int[] arrayI = new int[]{2, 4, 6, 8};
+        int[] arrayI2 = new int[]{1, 3, 5, 9, 6, 7};
         double[] arrayD = new double[]{2.5, 4.6, 6.7, 8.8, 3.9};
         boolean[] arrayB = new boolean[]{true, false, false, true, true};
         String[] arrayS = new String[]{"Tacos", "chips", "are", "really", "awesome"};
@@ -58,10 +58,14 @@ public class Fundamentals2
 
         System.out.println("#9:");
         concat(arrayI, arrayI2);
-        System.out.println("\n");*/
+        System.out.println("\n");
 
         System.out.println("#10:");
         merge(arrayI, arrayI2);
+        System.out.println("\n");*/
+        
+        System.out.println("#11:");
+        reverse(arrayI);
         System.out.println("\n");
     }
 
@@ -180,7 +184,6 @@ public class Fundamentals2
         for(int i = 0; i < array.length; i++){
             copiedArray[i] = array[i];
         }
-        printArray(copiedArray, false);
         return copiedArray;
     }
 
@@ -212,22 +215,38 @@ public class Fundamentals2
         int combinedLength = a.length + b.length;
         int[] finalArray = new int[combinedLength];
         int smallerArrayLength = 0;
+        int[] longerArray;
         if(a.length < b.length){
-            smallerArrayLength =+ a.length;
+            smallerArrayLength = a.length;
+            longerArray = b;
         }
         else{
-            smallerArrayLength =+ b.length;
+            smallerArrayLength = b.length;
+            longerArray = a;
         }
-        int alternateLength = smallerArrayLength * 2;
-        int[] alternatingArray = new int[alternateLength];
-        for(int i = 0; i < combinedLength; i += 1){
-            for(int i2 = 0; i2 == alternateLength; i2++){
-                alternatingArray[i] = a[i2];
-                alternatingArray[i + 1] = b[i2];
-            }
+        int alternateLength = (smallerArrayLength * 2) - 1;
+        int difference = combinedLength - alternateLength;
+        for(int i = 0, i2 = 0; i < smallerArrayLength; i++, i2 += 2){
+            finalArray[i2] = a[i];
+            finalArray[i2 + 1] = b[i];
         }
-         System.out.println("smallerArrayLength: " + smallerArrayLength + "\n");
-            printArray(alternatingArray, false);
-        return alternatingArray;
+        for(int i3 = smallerArrayLength, i4 = alternateLength + 1; i3 < longerArray.length; i3++, i4++){
+            finalArray[i4] = longerArray[i3];
+        }
+        printArray(finalArray, false);
+        return finalArray;
+    }
+
+    public static void reverse(int[] array){
+        int[] copyArray = copy(array);
+        for(int i = 0, i2 = array.length - 1; i < array.length && i2 > -1; i++, i2--){
+            copyArray[i] = array[i2];
+        }
+        array = copyArray;
+        printArray(array, false);
+    }
+    
+    public static int[] subArray(int[] array, int start, int stop){
+        for 
     }
 }

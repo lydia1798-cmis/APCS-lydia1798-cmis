@@ -10,7 +10,7 @@ public class Fundamentals2
 
         System.out.println("#2:");
         int[] arrayI = new int[]{2, 4, 6, 8};
-        int[] arrayI2 = new int[]{1, 3, 5, 9, 6, 7};
+        int[] arrayI2 = new int[]{1, 3, 5, 9, 6, 7, 3, 8, 1};
         double[] arrayD = new double[]{2.5, 4.6, 6.7, 8.8, 3.9};
         boolean[] arrayB = new boolean[]{true, false, false, true, true};
         String[] arrayS = new String[]{"Tacos", "chips", "are", "really", "awesome"};
@@ -62,10 +62,14 @@ public class Fundamentals2
 
         System.out.println("#10:");
         merge(arrayI, arrayI2);
-        System.out.println("\n");*/
+        System.out.println("\n");
         
         System.out.println("#11:");
         reverse(arrayI);
+        System.out.println("\n");*/
+        
+        System.out.println("#12:");
+        subArray(arrayI2, 2, 5);
         System.out.println("\n");
     }
 
@@ -247,6 +251,13 @@ public class Fundamentals2
     }
     
     public static int[] subArray(int[] array, int start, int stop){
-        for 
+        int range = (stop - start) + 2;
+        System.out.println("range: " + range + "\n");
+        int[] finalArray = new int[range];
+        for(int i = 0, i2 = start; i < stop; i++, i2++){
+            finalArray[i] = array[i2];
+        }
+        printArray(finalArray, false);
+        return finalArray;
     }
 }

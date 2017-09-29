@@ -1,9 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
-public class RobotTemplate extends Robot
+public class NathanI extends Robot
 {
-    public RobotTemplate(){
-        super(Color.black);
+    public NathanI(){
+        super(Color.blue);
     }
     
     public void init(){
@@ -20,9 +20,8 @@ public class RobotTemplate extends Robot
      * isClearRight() => true means no block to the left
      * isClearUp() => true means no block up
      * isClearDown() => true means no block down
-     * getX() => returns x coordinate of robot
-     * get() => returns y coordinate of robot 
      */
     public void behave(){
+        right();
     }
 }

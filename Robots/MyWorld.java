@@ -14,8 +14,8 @@ public class MyWorld extends World
     public void init(){
         removeObjects(getObjects(null));
         showText("", getWidth()/2,getHeight()/2);
-        initLevel1();
-        addBlocks(0.1);
+        initLevel2();
+        //addBlocks(0.3);
     }
 
     public void initBoard(){
@@ -34,8 +34,15 @@ public class MyWorld extends World
         initBoard();
         addEndZone();
     }
-
-    
+    public void initLevel2(){
+        initBoard();
+        for(int i = 0; i < 1; i++){
+            int x = Greenfoot.getRandomNumber(getWidth() - 10) + 5;
+            int y = Greenfoot.getRandomNumber(getHeight() - 10) + 5;
+            removeObjects(getObjectsAt(x, y, null));
+            addObject(new Goal(), x, y);
+        }
+    }
     public void addRobots(){   
         int added = 0;
         Class[] robots = robotClasses.clone();
@@ -46,10 +53,10 @@ public class MyWorld extends World
                 idx = (int)(Math.random() * robots.length);    
                 cls = robots[idx];
             }
-            
+
             robots[idx] = null;
             try{
-                addObject((Robot)cls.newInstance(),  1, 3 + (Greenfoot.getRandomNumber(getHeight()) - 2));
+                addObject((Robot)cls.newInstance(),  1, (Greenfoot.getRandomNumber(getHeight() - 4)+2));
 
                 added++;
             }catch(Exception e){
@@ -70,7 +77,7 @@ public class MyWorld extends World
     }
 
     public void addBlocks(double density){
-        for(int x = 0; x < getWidth(); x++){
+        for(int x = 3; x < getWidth(); x++){
             for(int y = 0; y < getHeight(); y++){
                 if(Math.random() < density){
                     addObject(new Barrier(), x, y);
@@ -90,6 +97,33 @@ public class MyWorld extends World
             }
         }
 
+    }
+
+    public void addHWall(int x, int y, int l){
+        while(l-- > 0){
+            addObject(new Barrier(), x++, y);
+        }
+    }
+
+    public void addVWall(int x, int y, int h){
+        while(h-- > 0){
+            addObject(new Barrier(), x, y++);
+
+        }
+    }
+
+    public void addVGapWall(int x, int gSt, int gSp){
+        addVWall(x, 0, gSt);
+        addVWall(x, gSp , getHeight()-2);
+        for(int y = gSt; y < gSp; y++){
+            removeObjects(getObjectsAt(x-1, y, null));
+            removeObjects(getObjectsAt(x+1, y, null));
+        }
+    }
+
+    public void addVGapWall(int x){
+        int gap = 1+Greenfoot.getRandomNumber(getHeight() - 2);
+        addVGapWall(x, gap, gap + 1);
     }
 
 }

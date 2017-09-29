@@ -1,9 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
-public class Lydia1 extends Robot
+public class Peter1 extends Robot
 {
-    public Lydia1(){
-        super(Color.magenta);
+    public Peter1(){
+        super(Color.red);
     }
 
     public void init(){
@@ -22,29 +22,29 @@ public class Lydia1 extends Robot
      * isClearDown() => true means no block down
      */
     public void behave(){
-        if(isClearUp() == true){
-            up();
+        int stopcount = 0;
+        if(isClearRight()== false){
+            if(isClearUp()== false){
+                down();
+            } else{
+                up();
+            }
         }
-        else if(isClearUp() == false){
+        else if(isClearRight()== true){
             right();
         }
-        
-        /*else if(isClearLeft() == false && isClearRight() == false && isClearDown() == false){
-            up();
-        }
-        
-        else if(isClearRight() == true){
-            right();
-        }
-        else if(isClearUp() == true){
-            up();
-        }
-        else if(isClearDown() == true){
-            down();
-        }
-        else if(isClearLeft() == true){
+        else if(isClearUp()&&isClearDown()== false){
             left();
-        }*/
-        
+            stopcount += 1;
+            if (stopcount%2 !=0){
+                stopcount +=1;
+                down();
+            }
+
+        }
+        else if(isClearUp()&&isClearRight()== false){
+            stopcount +=1;
+            left();           
+        }
     }
 }

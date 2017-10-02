@@ -1,6 +1,6 @@
 public class Fundamentals2
 {
-    /*Different data type (overloading): int, boolean, double & String*/
+    //Different data type (overloading): int, boolean, double & String
     public static void main(String[] args){
         System.out.println("#1:");
         int[] intArray = new int[]{2, 3, 5, 7, 11};
@@ -16,7 +16,7 @@ public class Fundamentals2
         boolean[] arrayB = new boolean[]{true, false, false, true, true};
         String[] arrayS = new String[]{"Tacos", "chips", "are", "really", "awesome"};
 
-        /*boolean isSkipped = true;
+        boolean isSkipped = true;
 
         printArray(arrayI, isSkipped);
         System.out.print("\n");
@@ -52,6 +52,12 @@ public class Fundamentals2
         System.out.println("#7:");
         copy(arrayI);
         System.out.println("\n");
+        copy(arrayD);
+        System.out.println("\n");
+        copy(arrayB);
+        System.out.println("\n");
+        copy(arrayS);
+        System.out.println("\n");
 
         System.out.println("#8:");
         pairs(9);
@@ -83,7 +89,7 @@ public class Fundamentals2
         
         System.out.println("#15:");
         maximize(arrayI, 5);
-        System.out.println("\n");*/
+        System.out.println("\n");
         
         System.out.println("#16:");
         maxMerge(arrayD, arrayD2);
@@ -215,6 +221,22 @@ public class Fundamentals2
         }
         return copiedArray;
     }
+    
+    public static boolean[] copy(boolean[] array){
+        boolean[] copiedArray = new boolean[array.length];
+        for(int i = 0; i < array.length; i++){
+            copiedArray[i] = array[i];
+        }
+        return copiedArray;
+    }
+    
+    public static String[] copy(String[] array){
+        String[] copiedArray = new String[array.length];
+        for(int i = 0; i < array.length; i++){
+            copiedArray[i] = array[i];
+        }
+        return copiedArray;
+    }
 
     public static int[] pairs(int n){
         int[] pairs = new int[n * 2];
@@ -276,11 +298,10 @@ public class Fundamentals2
     }
 
     public static int[] subArray(int[] array, int start, int stop){
-        int range = (stop - start) + 2;
-        System.out.println("range: " + range + "\n");
+        int range = (stop - start);
         int[] finalArray = new int[range];
         for(int i = 0, i2 = start; i < stop; i++, i2++){
-            finalArray[i] = array[i2];
+            finalArray[i2] = array[i];
         }
         printArray(finalArray, false);
         return finalArray;
@@ -328,16 +349,27 @@ public class Fundamentals2
     }
     
     public static double[] maxMerge(double[] a, double[] b){
-        
+        int greaterLength = 0;
+        int smallerLength = 0;
         if(a.length > b.length){
-            double[] finalArray = copy(a);
+            greaterLength = a.length;
+            smallerLength = b.length;
         }
         else{
-            double[] finalArray = copy(b);
+            greaterLength = b.length;
+            smallerLength = a.length;
         }
-        
-        for(int i = 0; i < greaterLength; i++){
+        double[] finalArray = new double[greaterLength];
+        for(int i = 0; i < smallerLength; i++){
             if(a[i] > b[i]){
+                finalArray[i] = a[i];
+            }
+            else{
+                finalArray[i] = b[i];
+            }
+        }
+        for(int i = 0; i < finalArray.length; i++){
+            if(a.length > b.length){
                 finalArray[i] = a[i];
             }
             else{

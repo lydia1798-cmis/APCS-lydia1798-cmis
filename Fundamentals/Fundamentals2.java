@@ -10,8 +10,9 @@ public class Fundamentals2
 
         System.out.println("#2:");
         int[] arrayI = new int[]{2, 4, 6, 8};
-        int[] arrayI2 = new int[]{1, 3, 5, 9, 6, 7, 3, 8, 1};
+        int[] arrayI2 = new int[]{1, 3, 5, 9};
         double[] arrayD = new double[]{2.5, 4.6, 6.7, 8.8, 3.9};
+        double[] arrayD2 = new double[]{1.7, 6.8, 3.3};
         boolean[] arrayB = new boolean[]{true, false, false, true, true};
         String[] arrayS = new String[]{"Tacos", "chips", "are", "really", "awesome"};
 
@@ -63,13 +64,29 @@ public class Fundamentals2
         System.out.println("#10:");
         merge(arrayI, arrayI2);
         System.out.println("\n");
-        
+
         System.out.println("#11:");
         reverse(arrayI);
-        System.out.println("\n");*/
-        
+        System.out.println("\n");
+
         System.out.println("#12:");
         subArray(arrayI2, 2, 5);
+        System.out.println("\n");
+
+        System.out.println("#13:");
+        compareArrays(arrayI, arrayI2);
+        System.out.println("\n");
+
+        System.out.println("#14:");
+        minimize(arrayI, 3);
+        System.out.println("\n");
+        
+        System.out.println("#15:");
+        maximize(arrayI, 5);
+        System.out.println("\n");*/
+        
+        System.out.println("#16:");
+        maxMerge(arrayD, arrayD2);
         System.out.println("\n");
     }
 
@@ -190,6 +207,14 @@ public class Fundamentals2
         }
         return copiedArray;
     }
+    
+    public static double[] copy(double[] array){
+        double[] copiedArray = new double[array.length];
+        for(int i = 0; i < array.length; i++){
+            copiedArray[i] = array[i];
+        }
+        return copiedArray;
+    }
 
     public static int[] pairs(int n){
         int[] pairs = new int[n * 2];
@@ -249,13 +274,75 @@ public class Fundamentals2
         array = copyArray;
         printArray(array, false);
     }
-    
+
     public static int[] subArray(int[] array, int start, int stop){
         int range = (stop - start) + 2;
         System.out.println("range: " + range + "\n");
         int[] finalArray = new int[range];
         for(int i = 0, i2 = start; i < stop; i++, i2++){
             finalArray[i] = array[i2];
+        }
+        printArray(finalArray, false);
+        return finalArray;
+    }
+
+    public static int[] compareArrays(int[] a, int[] b){
+        int aLength = 0;
+        int bLength = 0;
+        for(int i = 0; i < a.length; i++){
+            if(a[i] < b[i]){
+                aLength++;
+            }
+            else{
+                bLength++;
+            }
+        }
+        if(aLength > bLength){
+            printArray(a, false);
+            return a;
+        }
+        else{
+            printArray(a, false);
+            return b;
+        }
+    }
+
+    public static int[] minimize(int[] array, int threshold){
+        int[] newArray = copy(array);
+        for(int i = 0; i < array.length; i++){
+            if(newArray[i] > threshold){
+                newArray[i] = threshold;
+            }
+        }
+        printArray(newArray, false);
+        return newArray;
+    }
+
+    public static void maximize(int[] array, int threshold){
+        for(int i = 0; i < array.length; i++){
+            if(array[i] < threshold){
+                array[i] = threshold;
+            }
+        }
+        printArray(array, false);
+    }
+    
+    public static double[] maxMerge(double[] a, double[] b){
+        
+        if(a.length > b.length){
+            double[] finalArray = copy(a);
+        }
+        else{
+            double[] finalArray = copy(b);
+        }
+        
+        for(int i = 0; i < greaterLength; i++){
+            if(a[i] > b[i]){
+                finalArray[i] = a[i];
+            }
+            else{
+                finalArray[i] = b[i];
+            }
         }
         printArray(finalArray, false);
         return finalArray;

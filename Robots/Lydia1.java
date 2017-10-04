@@ -22,29 +22,27 @@ public class Lydia1 extends Robot
      * isClearDown() => true means no block down
      */
     public void behave(){
-        if(isClearUp() == true){
-            up();
-        }
-        else if(isClearUp() == false){
-            right();
-        }
-        
-        /*else if(isClearLeft() == false && isClearRight() == false && isClearDown() == false){
-            up();
-        }
-        
-        else if(isClearRight() == true){
-            right();
-        }
-        else if(isClearUp() == true){
-            up();
-        }
-        else if(isClearDown() == true){
-            down();
-        }
-        else if(isClearLeft() == true){
+         if(isClearRight() == false && isClearUp() == false && isClearDown() == false){
             left();
-        }*/
+         }
+         
+         else if(isClearLeft() == false && isClearRight() == false && isClearDown() == false){
+             up();
+         }
+         
+         else if(isClearRight() == true){
+             right();
+         }
+         else if(isClearUp() == true){
+             up();
+         }
+         else if(isClearDown() == true){
+             down();
+         }
+         else if(isClearLeft() == true){
+             left();
+         }
         
-    }
+     }
+
 }

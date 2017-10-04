@@ -9,8 +9,9 @@ public class Fundamentals2
         System.out.println(intArray[0] + "\n" + doubleArray[2] + "\n" + stringArray[4] + "\n");
 
         System.out.println("#2:");
-        int[] arrayI = new int[]{2, 4, 6, 8};
+        int[] arrayI = new int[]{2, 4, 6, 8, 6, 7, 9, 2};
         int[] arrayI2 = new int[]{1, 3, 5, 9};
+        int[] arrayI3 = new int[]{4, 2, 7, 6};
         double[] arrayD = new double[]{2.5, 4.6, 6.7, 8.8, 3.9};
         double[] arrayD2 = new double[]{1.7, 6.8, 3.3};
         boolean[] arrayB = new boolean[]{true, false, false, true, true};
@@ -76,11 +77,11 @@ public class Fundamentals2
         System.out.println("\n");
 
         System.out.println("#12:");
-        subArray(arrayI2, 2, 5);
+        subArray(arrayI, 2, 5);
         System.out.println("\n");
 
         System.out.println("#13:");
-        compareArrays(arrayI, arrayI2);
+        compareArrays(arrayI3, arrayI2);
         System.out.println("\n");
 
         System.out.println("#14:");
@@ -298,10 +299,10 @@ public class Fundamentals2
     }
 
     public static int[] subArray(int[] array, int start, int stop){
-        int range = (stop - start);
+        int range = (stop - start) + 2;
         int[] finalArray = new int[range];
         for(int i = 0, i2 = start; i < stop; i++, i2++){
-            finalArray[i2] = array[i];
+            finalArray[i] = array[i2];
         }
         printArray(finalArray, false);
         return finalArray;
@@ -310,8 +311,8 @@ public class Fundamentals2
     public static int[] compareArrays(int[] a, int[] b){
         int aLength = 0;
         int bLength = 0;
-        for(int i = 0; i < a.length; i++){
-            if(a[i] < b[i]){
+        for(int i = 0; i < a.length - 1; i++){
+            if(a[i] > b[i]){
                 aLength++;
             }
             else{

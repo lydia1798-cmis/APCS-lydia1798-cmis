@@ -1,9 +1,10 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
-public class Lydia4 extends Robot
+public class harryPotter extends Robot
 {
-    public Lydia4(){
-        super(new Color(115, 217, 219));
+    public harryPotter(){
+        super(Color.magenta);
     }
     
     public void init(){
@@ -22,18 +23,24 @@ public class Lydia4 extends Robot
      * isClearDown() => true means no block down
      * getX() => returns x coordinate of robot
      * getY() => returns y coordinate of robot 
+     * public final int[] getData() => returns array of int data
+     * public final int getData(int idx) => returns int data from index idx
+     * public final void setData(int idx, int value) => sets value of data array at idx
+     * public final void setData(int[] newData) => replaces values in data array with values in newData
      */
     public void behave(){
-       /* if(isClearUp() == true
-        else if(isClearRight() == true && getY() % 2 == 0){
-            right();
+      locateRoom();
+    }
+    
+    public void locateRoom(){
+        public final int[] getData();
+         //sub-problem #1: Locating the room
+        if(isClearUp() == true){
+            up();
         }
-        else if(isClearDown() == true && getY() % 2 != 0){
-            down();
+        if(isClearLeft() == true){
+            left();
         }
-        else if(isClearDown() == true && getY() % 2 == 0){
-            down();
-        }*/
         
     }
 }

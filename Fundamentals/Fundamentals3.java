@@ -25,7 +25,7 @@ public class Fundamentals3{
                 {"#", " ", "#", " ", "#", " ", "#", " "},
                 {" ", "#", " ", "#", " ", "#", " ", "#"},
                 {"#", " ", "#", " ", "#", " ", "#", " "}};
-        
+
         boolean[][] booleanArray = new boolean[5][5];
         //#3
         //setValue(intLiteralArray1, 2, 3, 92929292);
@@ -41,6 +41,7 @@ public class Fundamentals3{
         //#7
         //String s = "lol";
         //s.equals("lol");
+        locate(checkerboardPattern);
     }
 
     public static void setValue(int[][] arr, int r, int c, int v){
@@ -122,15 +123,54 @@ public class Fundamentals3{
             System.out.print("\n");
         }
     }
-    
+
     public static String[][] locate(String[][] arr){
-        int randomCollum = math.random(10);
-        for(int collum = 0; collum < arr.length; collum++){
-                for(int row = 0; row < arr[collum].length; row++){
-                   if(arr[randomcollum][row] == "#"){
-                       arr
-                    }
-                }
-            }
+        double randomCollum = (Math.random() * 10);
+        int collum = 0;
+        int collumIndex = (int) (Math.random() * arr.length);
+        int rowIndex = (int) (Math.random() * arr[collum].length);
+        //determining random numbers
+        //if the collum is even row needs to be odd
+        //if the collum is odd row needs to be even
+        if(rowIndex % 2 == 0 && ){
+            rowIndex += 1;
+        }
+        if(collumIndex % 2 == 0){
+            collumIndex += 1;
+        }
+        System.out.print("rowIndex: " + rowIndex + " collumIndex: " + collumIndex);
+        /*if(arr[0][0] == " "){
+        for(collum = 0; collum < arr.length; collum++){
+        for(int row = 0; row < arr[collum].length; row++){
+
+        }
+        }
+        }
+        else{
+        }
+        for(collum = 0; collum < arr.length; collum++){
+        for(int row = 0; row < arr[collum].length; row++){
+        if(collum % 2 == 0){
+
+        //hashtags are odd rows
+        }
+        else{
+
+        //hashtags are even rows
+        }
+        // if(arr[collum][rowIndex] == "#"){
+        //   arr
+        //}*/
+        return arr;
     }
-}
+
+    public static int[][] replace(int[][] array, int threshold, newValue){
+        for(int collum = 0; collum < array.length; collum++){
+            for(int row = 0; row < array[collum].length; row++){
+                if(array[collum][row]
+            }
+
+        }
+
+    }
+

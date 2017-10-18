@@ -33,11 +33,12 @@ public class Fundamentals3{
         initializeArray(intDefaultArray1, 3);
         initializeArray(doubleDefaultArray1, 3);
         initializeArray(booleanArray, true);
-        initializeArray(checkerboardPattern, "-_-");
+        //initializeArray(checkerboardPattern, "-_-");
         //#5
         //print2DArray(intLiteralArray1, false);
         //#6
         snakePrint(intLiteralArray1);
+        System.out.println("7: \n");
         //#7
         //String s = "lol";
         //s.equals("lol");
@@ -90,7 +91,7 @@ public class Fundamentals3{
             }
         }
     }
-
+    //#5 int
     public static void print2DArray(int[][] array, boolean rowMajor){
         if(rowMajor == true){
             for(int collum = 0; collum < array.length; collum++){
@@ -109,7 +110,64 @@ public class Fundamentals3{
             }
         }
     }
-
+    //#5 double
+    public static void print2DArray(double[][] array, boolean rowMajor){
+        if(rowMajor == true){
+            for(int collum = 0; collum < array.length; collum++){
+                for(int row = 0; row < array[collum].length; row++){
+                    System.out.print(array[collum][row] + " ");
+                }
+                System.out.print("\n");
+            }
+        }
+        else{
+            for(int row = 0; row < array.length; row++){
+                for(int collum = 0; collum < array.length; collum++){
+                    System.out.print(array[collum][row] + " ");
+                } 
+                System.out.print("\n");
+            }
+        }
+    }
+    //#5 String
+    public static void print2DArray(String[][] array, boolean rowMajor){
+        if(rowMajor == true){
+            for(int collum = 0; collum < array.length; collum++){
+                for(int row = 0; row < array[collum].length; row++){
+                    System.out.print(array[collum][row] + " ");
+                }
+                System.out.print("\n");
+            }
+        }
+        else{
+            for(int row = 0; row < array.length; row++){
+                for(int collum = 0; collum < array.length; collum++){
+                    System.out.print(array[collum][row] + " ");
+                } 
+                System.out.print("\n");
+            }
+        }
+    }
+    //#5 Boolean
+    public static void print2DArray(boolean[][] array, boolean rowMajor){
+        if(rowMajor == true){
+            for(int collum = 0; collum < array.length; collum++){
+                for(int row = 0; row < array[collum].length; row++){
+                    System.out.print(array[collum][row] + " ");
+                }
+                System.out.print("\n");
+            }
+        }
+        else{
+            for(int row = 0; row < array.length; row++){
+                for(int collum = 0; collum < array.length; collum++){
+                    System.out.print(array[collum][row] + " ");
+                } 
+                System.out.print("\n");
+            }
+        }
+    }
+    
     public static void snakePrint(int[][] arr){
         for(int collum = 0; collum < arr.length; collum++){
             for(int row = 0, rowDecrese = arr[collum].length - 1; row < arr[collum].length || rowDecrese > 0; row++, rowDecrese--){
@@ -123,54 +181,45 @@ public class Fundamentals3{
             System.out.print("\n");
         }
     }
-
+    // #7
     public static String[][] locate(String[][] arr){
-        double randomCollum = (Math.random() * 10);
-        int collum = 0;
-        int collumIndex = (int) (Math.random() * arr.length);
-        int rowIndex = (int) (Math.random() * arr[collum].length);
-        //determining random numbers
-        //if the collum is even row needs to be odd
-        //if the collum is odd row needs to be even
-        if(rowIndex % 2 == 0 && ){
-            rowIndex += 1;
+        //1)Go through all of the hashes and count them
+        //2)Go through all of the hashes again and have 1 random number (of the hashes).
+        int hashCounter = 0;
+        int randomNum = (int) Math.random() * 10;
+        for(int collum = 0; collum < arr.length; collum++){
+            for(int row = 0; row < arr[collum].length; row++){
+                if(arr[collum][row] .equals ("#")){
+                    hashCounter++;
+                }
+            }
         }
-        if(collumIndex % 2 == 0){
-            collumIndex += 1;
-        }
-        System.out.print("rowIndex: " + rowIndex + " collumIndex: " + collumIndex);
-        /*if(arr[0][0] == " "){
-        for(collum = 0; collum < arr.length; collum++){
-        for(int row = 0; row < arr[collum].length; row++){
 
-        }
-        }
-        }
-        else{
-        }
-        for(collum = 0; collum < arr.length; collum++){
-        for(int row = 0; row < arr[collum].length; row++){
-        if(collum % 2 == 0){
+        int randomHash = (int) Math.floor(Math.random() * (hashCounter + 1));
 
-        //hashtags are odd rows
+        for(int collum = 0; collum < arr.length; collum++){
+            for(int row = 0; row < arr[collum].length; row++){
+                if(arr[collum][row] .equals ("#")){
+                    hashCounter++;
+                }
+                if(arr[collum][row] .equals ("#") && hashCounter/2 == randomHash){
+                    arr[collum][row] = Integer.toString(randomNum);
+                }
+            }
         }
-        else{
-
-        //hashtags are even rows
-        }
-        // if(arr[collum][rowIndex] == "#"){
-        //   arr
-        //}*/
+        System.out.println(hashCounter);
+        print2DArray(arr, true);
         return arr;
     }
 
-    public static int[][] replace(int[][] array, int threshold, newValue){
+    public static int[][] replace(int[][] array, int threshold, int newValue){
         for(int collum = 0; collum < array.length; collum++){
             for(int row = 0; row < array[collum].length; row++){
-                if(array[collum][row]
+                //if(array[collum][row]
             }
 
         }
-
+        return array;
     }
+}
 

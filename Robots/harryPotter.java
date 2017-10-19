@@ -6,11 +6,11 @@ public class harryPotter extends Robot
     public harryPotter(){
         super(Color.magenta);
     }
-    
+
     public void init(){
-        
+
     }
-    
+
     /**
      * What your robot can do:
      * right() => move 1 to the right
@@ -29,18 +29,47 @@ public class harryPotter extends Robot
      * public final void setData(int[] newData) => replaces values in data array with values in newData
      */
     public void behave(){
-      locateRoom();
+        locateRoom();
     }
-    
+
     public void locateRoom(){
-        public final int[] getData();
-         //sub-problem #1: Locating the room
-        if(isClearUp() == true){
-            up();
+        //sub-problem #1: Locating the room
+        //Geting to the top corner
+        int heightOfBox = 0;
+
+        if(getData(0) == 0){
+            if(isClearUp() == true){
+                //index 0 = true or false for up
+                up();
+            }
+            if(isClearLeft() == true){
+                left();
+            }
+            if(isClearLeft() == false && isClearUp() == false){
+                setData(0, 1);
+            }
         }
-        if(isClearLeft() == true){
-            left();
+        //Counting height
+        if(getData(1) == 0){ 
+            if(isClearDown() == true && getData(0) == 1){
+                heightOfBox += 1;
+                down();
+            }
+            if(isClearDown() == false){
+                setData(1, 1);
+            }
         }
         
+        if(isClearRight() == true && getData(2) == 0){
+            right();
+            setData(2, 1);
+        }
+        if(isClearUp() == true && getData(1) == 1){
+            up();
+        }
+        
+        if(isClearRight() == true && getData(0) == 1 && getData(1) == 1){
+            right();
+        }
     }
 }

@@ -46,6 +46,12 @@ public class Fundamentals3{
         System.out.print("\n");
         //#8
         replace(intLiteralArray1, 80, 13);
+        //#9
+        //shift(doubleLiteralArray1, 2);
+        System.out.println("\n");
+        //#10
+        System.out.println("#10:");
+        rotate(doubleLiteralArray1);
     }
 
     public static void setValue(int[][] arr, int r, int c, int v){
@@ -64,50 +70,50 @@ public class Fundamentals3{
     }
 
     public static void initializeArray(int[][] array, int value){
-        for(int collum = 0; collum < array.length; collum++){
-            for(int row = 0; row < array[collum].length; row++){
-                array[collum][row] = value;
+        for(int column = 0; column < array.length; column++){
+            for(int row = 0; row < array[column].length; row++){
+                array[column][row] = value;
             }
         }
     }
 
     public static void initializeArray(double[][] array, double value){
-        for(int collum = 0; collum < array.length; collum++){
-            for(int row = 0; row < array[collum].length; row++){
-                array[collum][row] = value;
+        for(int column = 0; column < array.length; column++){
+            for(int row = 0; row < array[column].length; row++){
+                array[column][row] = value;
             }
         }
     }
 
     public static void initializeArray(boolean[][] array, boolean value){
-        for(int collum = 0; collum < array.length; collum++){
-            for(int row = 0; row < array[collum].length; row++){
-                array[collum][row] = value;
+        for(int column = 0; column < array.length; column++){
+            for(int row = 0; row < array[column].length; row++){
+                array[column][row] = value;
             }
         }
     }
 
     public static void initializeArray(String[][] array, String value){
-        for(int collum = 0; collum < array.length; collum++){
-            for(int row = 0; row < array[collum].length; row++){
-                array[collum][row] = value;
+        for(int column = 0; column < array.length; column++){
+            for(int row = 0; row < array[column].length; row++){
+                array[column][row] = value;
             }
         }
     }
     //#5 int
     public static void print2DArray(int[][] array, boolean rowMajor){
         if(rowMajor == true){
-            for(int collum = 0; collum < array.length; collum++){
-                for(int row = 0; row < array[collum].length; row++){
-                    System.out.print(array[collum][row] + " ");
+            for(int column = 0; column < array.length; column++){
+                for(int row = 0; row < array[column].length; row++){
+                    System.out.print(array[column][row] + " ");
                 }
                 System.out.print("\n");
             }
         }
         else{
             for(int row = 0; row < array.length; row++){
-                for(int collum = 0; collum < array.length; collum++){
-                    System.out.print(array[collum][row] + " ");
+                for(int column = 0; column < array.length; column++){
+                    System.out.print(array[column][row] + " ");
                 } 
                 System.out.print("\n");
             }
@@ -116,17 +122,17 @@ public class Fundamentals3{
     //#5 double
     public static void print2DArray(double[][] array, boolean rowMajor){
         if(rowMajor == true){
-            for(int collum = 0; collum < array.length; collum++){
-                for(int row = 0; row < array[collum].length; row++){
-                    System.out.print(array[collum][row] + " ");
+            for(int column = 0; column < array.length; column++){
+                for(int row = 0; row < array[column].length; row++){
+                    System.out.print(array[column][row] + " ");
                 }
                 System.out.print("\n");
             }
         }
         else{
             for(int row = 0; row < array.length; row++){
-                for(int collum = 0; collum < array.length; collum++){
-                    System.out.print(array[collum][row] + " ");
+                for(int column = 0; column < array.length; column++){
+                    System.out.print(array[column][row] + " ");
                 } 
                 System.out.print("\n");
             }
@@ -135,17 +141,17 @@ public class Fundamentals3{
     //#5 String
     public static void print2DArray(String[][] array, boolean rowMajor){
         if(rowMajor == true){
-            for(int collum = 0; collum < array.length; collum++){
-                for(int row = 0; row < array[collum].length; row++){
-                    System.out.print(array[collum][row] + " ");
+            for(int column = 0; column < array.length; column++){
+                for(int row = 0; row < array[column].length; row++){
+                    System.out.print(array[column][row] + " ");
                 }
                 System.out.print("\n");
             }
         }
         else{
             for(int row = 0; row < array.length; row++){
-                for(int collum = 0; collum < array.length; collum++){
-                    System.out.print(array[collum][row] + " ");
+                for(int column = 0; column < array.length; column++){
+                    System.out.print(array[column][row] + " ");
                 } 
                 System.out.print("\n");
             }
@@ -154,31 +160,31 @@ public class Fundamentals3{
     //#5 Boolean
     public static void print2DArray(boolean[][] array, boolean rowMajor){
         if(rowMajor == true){
-            for(int collum = 0; collum < array.length; collum++){
-                for(int row = 0; row < array[collum].length; row++){
-                    System.out.print(array[collum][row] + " ");
+            for(int column = 0; column < array.length; column++){
+                for(int row = 0; row < array[column].length; row++){
+                    System.out.print(array[column][row] + " ");
                 }
                 System.out.print("\n");
             }
         }
         else{
             for(int row = 0; row < array.length; row++){
-                for(int collum = 0; collum < array.length; collum++){
-                    System.out.print(array[collum][row] + " ");
+                for(int column = 0; column < array.length; column++){
+                    System.out.print(array[column][row] + " ");
                 } 
                 System.out.print("\n");
             }
         }
     }
-
+    //#6
     public static void snakePrint(int[][] arr){
-        for(int collum = 0; collum < arr.length; collum++){
-            for(int row = 0, rowDecrese = arr[collum].length - 1; row < arr[collum].length || rowDecrese > 0; row++, rowDecrese--){
-                if(collum % 2 == 0){
-                    System.out.print(arr[collum][row] + " ");
+        for(int column = 0; column < arr.length; column++){
+            for(int row = 0, rowDecrese = arr[column].length - 1; row < arr[column].length || rowDecrese > 0; row++, rowDecrese--){
+                if(column % 2 == 0){
+                    System.out.print(arr[column][row] + " ");
                 }
                 else{
-                    System.out.print(arr[collum][rowDecrese] + " ");
+                    System.out.print(arr[column][rowDecrese] + " ");
                 }
             }
             System.out.print("\n");
@@ -191,38 +197,64 @@ public class Fundamentals3{
         int hashCounter1 = 0;
         int hashCounter2 = 0;
         int randomNum = (int) (Math.random() * 9);
-        for(int collum = 0; collum < arr.length; collum++){
-            for(int row = 0; row < arr[collum].length; row++){
-                if(arr[collum][row] .equals ("#")){
+        for(int column = 0; column < arr.length; column++){
+            for(int row = 0; row < arr[column].length; row++){
+                if(arr[column][row] .equals ("#")){
                     hashCounter1++;
                 }
             }
         }
         int randomHash = (int) (Math.random() * (hashCounter1 - 1));
-        for(int collum = 0; collum < arr.length; collum++){
-            for(int row = 0; row < arr[collum].length; row++){
-                if(arr[collum][row] .equals ("#")){
+        for(int column = 0; column < arr.length; column++){
+            for(int row = 0; row < arr[column].length; row++){
+                if(arr[column][row] .equals ("#")){
                     hashCounter2++;
                 }
-                if(arr[collum][row] .equals ("#") && hashCounter2 == randomHash){
-                    arr[collum][row] = Integer.toString(randomNum);
+                if(arr[column][row] .equals ("#") && hashCounter2 == randomHash){
+                    arr[column][row] = Integer.toString(randomNum);
                 }
             }
         }
         print2DArray(arr, true);
         return arr;
     }
-
+    //#8
     public static int[][] replace(int[][] array, int threshold, int newValue){
-        for(int collum = 0; collum < array.length; collum++){
-            for(int row = 0; row < array[collum].length; row++){
-                if(array[collum][row] > threshold){
-                    array[collum][row] = newValue;
+        for(int column = 0; column < array.length; column++){
+            for(int row = 0; row < array[column].length; row++){
+                if(array[column][row] > threshold){
+                    array[column][row] = newValue;
                 }
             }
         }
         print2DArray(array, true);
         return array;
     }
+    //#9   (shiftrow is referring to a row index)
+    public static double[][] shift(double[][] arr, int shiftRow){
+        double[] shiftRowArray = new double[arr[shiftRow].length];
+        for(int column = arr.length -1; column < arr.length; column--){
+            if(column > shiftRow){
+                arr[column] = arr[column - 1];
+            }
+        }
 
+        for(int row = 0; row < arr[shiftRow].length; row++){
+            shiftRowArray[row] = (double) Math.random() * 10;
+        }
+        arr[shiftRow] = shiftRowArray;
+        print2DArray(arr, true);
+        return arr;
+    }
+    //#10
+    public static double[][] rotate(double[][] arr){
+        double arr2[][] = new double[arr.length][arr[0].length];
+        for(int column = 0; column < arr.length; column++){
+            for(int row = 0; row < arr[column].length; row++){
+                arr2[row][column] = arr[column][row];
+            }
+        }
+        print2DArray(arr2, true);
+        return arr2;
+    }
 }

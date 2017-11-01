@@ -59,17 +59,27 @@ public class harryPotter extends Robot
                 setData(1, 1);
             }
         }
-        
+
         if(isClearRight() == true && getData(2) == 0){
             right();
             setData(2, 1);
         }
-        if(isClearUp() == true && getData(1) == 1){
+        int downcounter = 0;
+        if(isClearUp() == true && getData(1) == 1 && getData(3) == 0 && getX() % 2 != 0){
             up();
         }
         
-        if(isClearRight() == true && getData(0) == 1 && getData(1) == 1){
-            right();
+        if(getData(3) == 0){ //scanning the entire room
+            if(isClearRight() == true && getData(0) == 1 && getData(1) == 1 && getX() % 2 != 0){
+                right();
+            }
+            if(isClearDown() == true && getData(0) == 1 && getData(1) == 1 && getX() % 2 == 0){
+                downcounter++;
+                down();
+            }
+            if(isClearLeft() == true && getData(0) == 1 && getData(1) == 1 && getX() % 2 == 0 && isClearDown() == false){
+                right();
+            }
         }
     }
 }

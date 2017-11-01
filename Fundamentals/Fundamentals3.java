@@ -52,6 +52,13 @@ public class Fundamentals3{
         //#10
         System.out.println("#10:");
         rotate(doubleLiteralArray1);
+        System.out.println("\n");
+        //#11
+        double [][] doubles = {
+                {0.5, 0.3, 0.1},
+                {0.9, 0.2, 0.8},
+                {0.6, 0.4, 0.7}};
+        analyze(doubles, 0.3333);
     }
 
     public static void setValue(int[][] arr, int r, int c, int v){
@@ -256,5 +263,18 @@ public class Fundamentals3{
         }
         print2DArray(arr2, true);
         return arr2;
+    }
+    //#11
+    public static boolean[][] analyze(double[][] array, double threshold){
+        boolean[][] boolarr = new boolean[array.length][array[0].length];
+        for(int column = 0; column < array.length; column++){
+            for(int row = 0; row < array[column].length; row++){
+                if(array[column][row] > threshold){
+                    boolarr[column][row] = true;
+                }
+            }
+        }
+        print2DArray(boolarr, true);
+        return boolarr;
     }
 }

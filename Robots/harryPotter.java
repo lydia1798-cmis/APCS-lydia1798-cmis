@@ -35,8 +35,32 @@ public class harryPotter extends Robot
     public void locateRoom(){
         //sub-problem #1: Locating the room
         //Geting to the top corner
-        int heightOfBox = 0;
 
+        reachedTopLCorner();
+        scanningRoom();
+        //Counting height
+        /*if(getData(1) == 0){ 
+        if(isClearDown() == true && getData(0) == 1){
+
+        down();
+        }
+        if(isClearDown() == false){
+        setData(1, 1);
+        }
+        }
+
+        if(isClearRight() == true && getData(2) == 0){
+        right();
+        setData(2, 1);
+        }
+        int downcounter = 0;
+        if(isClearUp() == true && getData(1) == 1 && getData(3) == 0 && getX() % 2 != 0){
+        up();
+        }*/
+
+    }
+
+    public void reachedTopLCorner(){
         if(getData(0) == 0){
             if(isClearUp() == true){
                 //index 0 = true or false for up
@@ -49,37 +73,62 @@ public class harryPotter extends Robot
                 setData(0, 1);
             }
         }
-        //Counting height
-        if(getData(1) == 0){ 
-            if(isClearDown() == true && getData(0) == 1){
-                heightOfBox += 1;
-                down();
-            }
-            if(isClearDown() == false){
-                setData(1, 1);
-            }
-        }
+    }
 
-        if(isClearRight() == true && getData(2) == 0){
-            right();
-            setData(2, 1);
-        }
-        int downcounter = 0;
-        if(isClearUp() == true && getData(1) == 1 && getData(3) == 0 && getX() % 2 != 0){
-            up();
-        }
-        
-        if(getData(3) == 0){ //scanning the entire room
-            if(isClearRight() == true && getData(0) == 1 && getData(1) == 1 && getX() % 2 != 0){
-                right();
-            }
-            if(isClearDown() == true && getData(0) == 1 && getData(1) == 1 && getX() % 2 == 0){
-                downcounter++;
+    public void scanningRoom(){
+        if(getData(0) == 1 && getData(2) == 0){ //scanning the entire room
+            //first down only!!!!!!!!!!!!!!
+            //setting data point
+            if(isClearDown() == true && getX() % 2 != 0){
+                setData(5, 0);
+                System.out.println(getData(5));
+                setData(1, getData(1) + 1);
+                System.out.println(getData(1));
                 down();
             }
-            if(isClearLeft() == true && getData(0) == 1 && getData(1) == 1 && getX() % 2 == 0 && isClearDown() == false){
+            int setHeight = getData(1);
+            int length = 11;
+            System.out.println(setHeight);
+
+            if(isClearDown() == false && getData(1) != setHeight && getData(4) == 0){
+                setData(4, 1);
                 right();
             }
+            if(isClearUp() == false && getData(1) != setHeight && getData(4) == 0){
+                setData(4, 1);
+                right();
+            }
+
+            //down that is repatitive
+            //actually running things
+            /*if(isClearDown() == true && getX() % 2 != 0){
+            setData(4, getData(1) + 1);
+            down();
+
+            }*/
+            if(isClearRight() == true && getData(5) < length && isClearDown() == false){
+                setData(1, 0);
+                setData(5, getData(5) + 1);
+                System.out.println(getData(5));
+                right();
+            }
+            
+            if(isClearUp() == true && getX() % 2 == 0){
+                setData(5, 0);
+                System.out.println(getData(5));
+                setData(1, getData(1) + 1);
+                System.out.println(getData(4));
+                up();
+            }
+            
+            if(isClearRight() == true && getData(5) < length && isClearUp() == false){
+                setData(1, 0);
+                setData(5, getData(5) + 1);
+                System.out.println(getData(5));
+                right();
+            }
+
         }
     }
 }
+

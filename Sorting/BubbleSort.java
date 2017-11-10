@@ -25,20 +25,15 @@ public class BubbleSort
     }
 
     public static void sort(int[] array){
-        boolean isSorted = false;
-        boolean switched = false;
-        while(!isSorted){
-            switched = false;
+        boolean isSorted = true;
+        while(isSorted == true){
             for(int i = 0; i < array.length - 1; i++){
                 int leftValue = array[i];
                 int rightValue = array[i + 1];
                 if(leftValue > rightValue){
-                    switched = true;
+                    isSorted = false;
                     array[i] = rightValue;
                     array[i + 1] = leftValue;
-                }
-                if(switched == false){
-                    isSorted = true;
                 }
             }
         }

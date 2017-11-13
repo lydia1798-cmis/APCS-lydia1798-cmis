@@ -25,8 +25,9 @@ public class BubbleSort
     }
 
     public static void sort(int[] array){
-        boolean isSorted = true;
-        while(isSorted == true){
+        boolean isSorted = false;
+        while(!isSorted){
+            isSorted = true;
             for(int i = 0; i < array.length - 1; i++){
                 int leftValue = array[i];
                 int rightValue = array[i + 1];

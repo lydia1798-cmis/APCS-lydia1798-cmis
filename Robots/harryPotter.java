@@ -29,106 +29,132 @@ public class harryPotter extends Robot
      * public final void setData(int[] newData) => replaces values in data array with values in newData
      */
     public void behave(){
-        locateRoom();
-    }
-
-    public void locateRoom(){
-        //sub-problem #1: Locating the room
-        //Geting to the top corner
-
-        reachedTopLCorner();
-        scanningRoom();
-        //Counting height
-        /*if(getData(1) == 0){ 
-        if(isClearDown() == true && getData(0) == 1){
-
-        down();
-        }
-        if(isClearDown() == false){
-        setData(1, 1);
-        }
-        }
-
-        if(isClearRight() == true && getData(2) == 0){
-        right();
-        setData(2, 1);
-        }
-        int downcounter = 0;
-        if(isClearUp() == true && getData(1) == 1 && getData(3) == 0 && getX() % 2 != 0){
-        up();
-        }*/
+        getToRoom();
 
     }
 
-    public void reachedTopLCorner(){
-        if(getData(0) == 0){
-            if(isClearUp() == true){
-                //index 0 = true or false for up
+    public void getToRoom(){
+        //0 get to the top left
+        if (getData(0) == 0) {
+            if (isClearUp()) {
                 up();
             }
-            if(isClearLeft() == true){
-                left();
+            else {
+                if (isClearLeft()) {
+                    left();
+                }
+                else {
+                    setData(0, 1);
+                }
             }
-            if(isClearLeft() == false && isClearUp() == false){
-                setData(0, 1);
+        }
+        else {
+            //1
+            if (getData(0) == 1) {
+                //1.0 get down while counting then record
+                if (getData(1) == 0) {
+                    if (isClearDown()) {
+                        setData(2, getData(2) + 1);
+                        down();
+                    }
+                    else {
+                        setData(1, 1);
+                    }
+                }
+                //1.1 get up and move to the right
+                else {
+                    if (isClearUp()) {
+                        up();
+                    }
+                    else {
+                        setData(0, 2);
+                        setData(1, 0);
+                        right();
+                    }
+                }
+            }
+            else {
+                //2
+                if (getData(0) == 2) {
+                    //2.0 get down whilst scanning, calculate room coordinates
+                    if (getData(1) == 0) {
+                        if (isClearDown()) {
+                            setData(3, getData(3) + 1);
+                            down();
+                        }
+                        else {
+                            if (getData(3) == getData(2)) {
+                                setData(1, 1);
+                                setData(3, 0);
+                                right();
+                            }
+                            else {
+                                setData(4, getX() + 11);
+                                setData(5, getY() + 12);
+                                setData(6, getX() - 1);
+                                setData(0, 3);
+                                setData(1, 0);
+                            }
+                        }
+                    }
+                    //2.1 get up whilst scanning
+                    else if (getData(1) == 1) {
+                        if (isClearUp()) {
+                            setData(3, getData(3) + 1);
+                            up();
+                        }
+                        else {
+                            if (getData(3) == getData(2)) {
+                                setData(1, 0);
+                                setData(3, 0);
+                                right();
+                            }
+                            else {
+                                setData(1, 2);
+                                setData(3, 0);
+                                setData(2, 12);
+                                left();
+                            }
+                        }
+                    }
+                    //2.2 get from bottom corner to top corner, calculate
+                    else {
+                        if (getData(3) < getData(2)) {
+                            setData(3, getData(3) + 1);
+                            up();
+                        }
+                        else{
+                            setData(4, getX() + 11);
+                            setData(5, getY() + 12);
+                            setData(6, getX() - 1);
+                            setData(0, 3);
+                            setData(1,0);
+                            right();
+                        }
+                    }
+                }
+                else {
+                    //3
+                    if (getData(0) == 3) {
+                        //3.0 scan top try to get in
+                        if (getData(1) == 0) {
+
+                        }
+                    }
+                }
             }
         }
     }
 
-    public void scanningRoom(){
-        if(getData(0) == 1 && getData(2) == 0){ //scanning the entire room
-            //first down only!!!!!!!!!!!!!!
-            //setting data point
-            if(isClearDown() == true && getX() % 2 != 0){
-                setData(5, 0);
-                System.out.println(getData(5));
-                setData(1, getData(1) + 1);
-                System.out.println(getData(1));
-                down();
-            }
-            int setHeight = getData(1);
-            int length = 11;
-            System.out.println(setHeight);
+    public void getInsideRoom(){
+        
+        //3.1 scan right try to get in
+        //3.2 scan bottom try to get in
+        //3.3 scan left try to get in
 
-            if(isClearDown() == false && getData(1) != setHeight && getData(4) == 0){
-                setData(4, 1);
-                right();
-            }
-            if(isClearUp() == false && getData(1) != setHeight && getData(4) == 0){
-                setData(4, 1);
-                right();
-            }
+        //4 get in
+        //4.1 top left corner
 
-            //down that is repatitive
-            //actually running things
-            /*if(isClearDown() == true && getX() % 2 != 0){
-            setData(4, getData(1) + 1);
-            down();
-
-            }*/
-            if(isClearRight() == true && getData(5) < length && isClearDown() == false){
-                setData(1, 0);
-                setData(5, getData(5) + 1);
-                System.out.println(getData(5));
-                right();
-            }
-            
-            if(isClearUp() == true && getX() % 2 == 0){
-                setData(5, 0);
-                System.out.println(getData(5));
-                setData(1, getData(1) + 1);
-                System.out.println(getData(4));
-                up();
-            }
-            
-            if(isClearRight() == true && getData(5) < length && isClearUp() == false){
-                setData(1, 0);
-                setData(5, getData(5) + 1);
-                System.out.println(getData(5));
-                right();
-            }
-
-        }
+        //5 Snake inside room
     }
 }
-

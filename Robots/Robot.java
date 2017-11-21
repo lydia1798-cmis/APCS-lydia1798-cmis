@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import  java.awt.Color;
+
 
 public abstract class Robot extends Actor
 {

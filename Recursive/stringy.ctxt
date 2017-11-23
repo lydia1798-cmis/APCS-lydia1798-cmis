@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=stringy
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=sym\ times
+comment2.target=java.lang.String\ stringy(java.lang.String,\ int)
+numComments=3

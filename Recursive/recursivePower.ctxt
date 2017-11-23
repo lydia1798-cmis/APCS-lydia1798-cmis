@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=recursivePower
+comment1.params=arg
+comment1.target=void\ main(java.lang.String[])
+comment2.params=n\ x
+comment2.target=int\ power(int,\ int)
+numComments=3

@@ -1,5 +1,5 @@
 #BlueJ class context
-comment0.target=recursivePower
+comment0.target=RecursivePower
 comment1.params=arg
 comment1.target=void\ main(java.lang.String[])
 comment2.params=n\ x

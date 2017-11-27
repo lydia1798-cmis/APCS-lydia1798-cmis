@@ -1,4 +1,4 @@
-public class stringy{
+public class Stringy{
     public static void main(String[] args){
         System.out.println(stringy("(-_-) ", 5));
     }

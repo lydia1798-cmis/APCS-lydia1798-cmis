@@ -1,5 +1,5 @@
 //Two arguments - (n, x): n has to be to the power of x
-public class recursivePower
+public class RecursivePower
 {
     public static void main(String[] arg){
          System.out.println(power(2, 2));

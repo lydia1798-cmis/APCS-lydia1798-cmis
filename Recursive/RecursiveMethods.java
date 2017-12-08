@@ -5,6 +5,8 @@ public class RecursiveMethods
         //System.out.println(power(2, 0));
         //System.out.println(binToDec("11"));
         //System.out.println(reverse("I can't do this"));
+        //System.out.println(remove("12345", "3"));
+        System.out.println(replace("12345", "3", "8"));
     }
 
     //Number 1:
@@ -69,9 +71,42 @@ public class RecursiveMethods
            return s.substring(s.length() - 1) + reverse(s.substring(0, s.length() - 1));
        }
     }
-    
+    //remove("s", "s");
     public static String remove(String s, String t){
-        //if(s.length()//idk       
-        return t;
+        if(s.length() == 1){
+            if(s.equals(t)){
+                return "";
+            }
+            else{
+                return s;
+            }
+        }
+        else{
+            if(s.substring(0, 1).equals(t)){
+                return remove(s.substring(1), t);
+            }
+            else{
+                return s.substring(0,1) + remove(s.substring(1), t);
+            }
+        }
+    }
+    
+    public static String replace(String s, String t, String r){
+        if(s.length() == 1){
+            if(s.equals(t)){
+                return "";
+            }
+            else{
+                return s;
+            }
+        }
+        else{
+            if(s.substring(0, 1).equals(t)){
+                return r + replace(s.substring(1), t, r);
+            }
+            else{
+                return s.substring(0,1) + replace(s.substring(1), t, r);
+            }
+        }
     }
 }

@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=MergeSort
+comment1.params=
+comment1.target=void\ main()
+comment2.params=arr
+comment2.target=int[]\ firstHalf(int[])
+comment2.text=public\ int[]\ MergeSort(int[]\ arr)\n\ \ \ \ {\n\ \ \ \ //base\ case\n\ \ \ \ if(arr.length\ \=\=\ 1){\n\ \ \ \ return\ arr;\n\ \ \ \ }\n\ \ \ \ //recursive\ case\n\ \ \ \ int[]\ arr1\ \=\ {1,\ 2};\n\ \ \ \ int[]\ arr2\ \=\ {3,\ 4};\ \n\ \ \ \ return\ \n}
+comment3.params=arr
+comment3.target=int[]\ secondHalf(int[])
+comment4.params=array\ isSkipped
+comment4.target=void\ printArray(int[],\ boolean)
+numComments=5

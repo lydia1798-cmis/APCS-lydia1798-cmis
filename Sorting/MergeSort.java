@@ -3,8 +3,7 @@ public class MergeSort
 {
     public static void main(){
         int[] arr = {9, 2, 6, 4, 8, 1, 16, 7};
-        //print2DArray(arr, true);
-        printArray(arr, false);
+        printArray(MergeSort(arr), false);
     }
 
     public static int[][] spliter(int[] arr){        
@@ -16,52 +15,52 @@ public class MergeSort
             secondStart = i;
         }    
         //second half
-        if(arr.length % 2 == 0){
-                int[] secondHalf = new int[secondStart + 1];
-                for(int i = secondStart + 1, i2 = 0; i2 < secondHalf.length; i++, i2++){
-                    secondHalf[i2] = arr[i];
-                }    
-                int[][] array2D = new int[][]{firstHalf, secondHalf};
-                print2DArray(array2D, true);
-                return array2D;}
-            else{//ODD
-                int[] secondHalf = new int[arr.length/2 + 1];
-                for(int i = secondHalf.length - 1, i2 = 0; i2 < secondHalf.length; i++, i2++){
-                    secondHalf[i2] = arr[i];
-                }    
-                int[][] array2D = new int[][]{firstHalf, secondHalf};
-                print2DArray(array2D, true);
-                return array2D;
+        if(arr.length % 2 == 0){//EVEN
+            int[] secondHalf = new int[secondStart + 1];
+            for(int i = secondStart + 1, i2 = 0; i2 < secondHalf.length; i++, i2++){
+                secondHalf[i2] = arr[i];
+            }    
+            int[][] array2D = new int[][]{firstHalf, secondHalf};
+            //print2DArray(array2D, true);
+            return array2D;}
+        else{//ODD
+            int[] secondHalf = new int[arr.length/2 + 1];
+            for(int i = secondHalf.length - 1, i2 = 0; i2 < secondHalf.length; i++, i2++){
+                secondHalf[i2] = arr[i];
+            }    
+            int[][] array2D = new int[][]{firstHalf, secondHalf};
+            //print2DArray(array2D, true);
+            return array2D;
+        }
+    }
+
+    public static int[] merge(int[] arr1, int[] arr2){
+        int[] merged = new int[arr1.length + arr2.length];        
+        for(int i = 0, i1 = 0, i2 = 0; i < merged.length - 1 || i1 < arr1.length - 1|| i2 < arr2.length - 1; i++){                 
+            if(arr1[i1] > arr2[i2] && arr1.length >= 0){
+                merged[i] = arr1[i2];
+                i1++;
+            }
+            else if(arr1[i1] < arr2[i2] && arr2.length >= 0){
+                merged[i] = arr2[i2];
+                i2++;
             }
         }
+        printArray(merged, false);
+        return merged;
+    }
 
-        public int[] MergeSort(int[] arr){
+    public static int[] MergeSort(int[] arr){
         //base case
         if(arr.length == 1){
             return arr;
         }
         //recursive case
         int[][] array2D = spliter(arr);    
-        int[] arr1 = {1, 2};
-        int[] arr2 = {3, 4}; 
-        return arr;
-    }
-
-    public static int[] firstHalf(int[] arr){
-        int[] firstHalf = new int[arr.length/2];
-        for(int i = 0; i < arr.length/2; i++){
-            firstHalf[i] = arr[i];
-        }    
-        return firstHalf;
-    }
-
-    public static int[] secondHalf(int[] arr)
-    {
-        int[] secondHalf = new int[arr.length - arr.length/2];
-        for(int i = secondHalf.length - 1, i2 = 0; i2 < secondHalf.length; i++, i2++){
-            secondHalf[i2] = arr[i];
-        }    
-        return secondHalf;
+        int[] arr1 = array2D[0];  
+        MergeSort(arr1);
+        int[] arr2 = array2D[1]; 
+        return MergeSort(arr1);
     }
 
     public static void printArray(int array[], boolean isSkipped){

@@ -3,7 +3,9 @@ public class MergeSort
 {
     public static void main(){
         int[] arr = {9, 2, 6, 4, 8, 1, 16, 7};
-        printArray(MergeSort(arr), false);
+        int[] arr1 = {1, 3, 5};
+        int[] arr2 = {2, 4, 6};
+        merge(arr1, arr2);
     }
 
     public static int[][] spliter(int[] arr){        
@@ -35,13 +37,19 @@ public class MergeSort
     }
 
     public static int[] merge(int[] arr1, int[] arr2){
-        int[] merged = new int[arr1.length + arr2.length];        
-        for(int i = 0, i1 = 0, i2 = 0; i < merged.length - 1 || i1 < arr1.length - 1|| i2 < arr2.length - 1; i++){                 
-            if(arr1[i1] > arr2[i2] && arr1.length >= 0){
+        int[] merged = new int[arr1.length + arr2.length];         
+        for(int i = 0, i1 = 0, i2 = 0; i < merged.length - 1; i++){       
+            if(arr1.length-1 == i1){
+                merged[i] = arr2[i2];
+            }
+            else if(arr2.length-1 == i2){
+                merged[i] = arr1[i1];
+            }
+            if(arr1[i1] < arr2[i2] && arr1.length > i1){
                 merged[i] = arr1[i2];
                 i1++;
             }
-            else if(arr1[i1] < arr2[i2] && arr2.length >= 0){
+            else if(arr1[i1] > arr2[i2] && arr2.length > i2){
                 merged[i] = arr2[i2];
                 i2++;
             }

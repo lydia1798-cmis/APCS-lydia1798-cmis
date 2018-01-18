@@ -2,10 +2,11 @@
 public class MergeSort
 {
     public static void main(){
-        int[] arr = {9, 2, 6, 4, 8, 1, 16, 7};
-        int[] arr1 = {1, 3, 5};
-        int[] arr2 = {2, 4, 6};
-        merge(arr1, arr2);
+        int[] arr = {9, 2, 6, 4, 4, 5, 55, 1, 0, 3, 5, 16, 7};
+        int[] arr1 = {1, 3, 7};
+        int[] arr2 = {2, 4, 6, 8};
+        //merge(arr1, arr2);
+        printArray(MergeSort(arr), false);
     }
 
     public static int[][] spliter(int[] arr){        
@@ -38,37 +39,48 @@ public class MergeSort
 
     public static int[] merge(int[] arr1, int[] arr2){
         int[] merged = new int[arr1.length + arr2.length];         
-        for(int i = 0, i1 = 0, i2 = 0; i < merged.length - 1; i++){       
-            if(arr1.length-1 == i1){
-                merged[i] = arr2[i2];
-            }
-            else if(arr2.length-1 == i2){
-                merged[i] = arr1[i1];
-            }
-            if(arr1[i1] < arr2[i2] && arr1.length > i1){
-                merged[i] = arr1[i2];
-                i1++;
-            }
-            else if(arr1[i1] > arr2[i2] && arr2.length > i2){
+        for(int i = 0, i1 = 0, i2 = 0; i < merged.length; i++){  
+            boolean complete = false;
+            //check if arr1 & arr2 are still full. If not fill in merged with remaining.
+            if(arr1.length == i1){
                 merged[i] = arr2[i2];
                 i2++;
+                complete = true;
+            }
+            else if(arr2.length == i2 && complete == false){
+                merged[i] = arr1[i1];
+                i1++;
+                complete = true;
+            }
+            if(complete == false && arr1[i1] <= arr2[i2]  && arr1.length >= i1){
+                merged[i] = arr1[i1];
+                i1++;              
+            }
+            else if(complete == false && arr1[i1] >= arr2[i2] && arr2.length >= i2){
+                merged[i] = arr2[i2];
+                i2++;  
             }
         }
-        printArray(merged, false);
+        //printArray(merged, false);  
         return merged;
     }
 
-    public static int[] MergeSort(int[] arr){
+        public static int[] MergeSort(int[] arr){
         //base case
         if(arr.length == 1){
             return arr;
         }
         //recursive case
         int[][] array2D = spliter(arr);    
+        
         int[] arr1 = array2D[0];  
-        MergeSort(arr1);
+        int[] array1 = MergeSort(arr1);
         int[] arr2 = array2D[1]; 
-        return MergeSort(arr1);
+        int[] array2 = MergeSort(arr2);
+        
+        arr = merge(array1, array2);
+        return arr;
+        //printArray(arr, false);
     }
 
     public static void printArray(int array[], boolean isSkipped){

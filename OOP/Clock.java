@@ -33,4 +33,14 @@ public class Clock
             this.seconds = seconds;
         }
     }
+    
+    //toString method
+    public String toString(){
+        String out = "";
+        out += "The time is ";
+        out += hours + ":";
+        out += minutes + ":";
+        out += seconds + "\n";
+        return out;
+    }
 }

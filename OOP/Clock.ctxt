@@ -4,4 +4,6 @@ comment1.params=
 comment1.target=Clock()
 comment2.params=hours\ minutes\ seconds
 comment2.target=Clock(int,\ int,\ int)
-numComments=3
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4

@@ -13,6 +13,6 @@ public class ClockDriver
         String inputHour;
         inputHour = JOptionPane.showInputDialog("Hours: ");
         Clock bedroomClock = new Clock(Integer.valueOf(inputSec), Integer.valueOf(inputMin), Integer.valueOf(inputHour));
-        System.out.println("BEDROOM " + bedroomClock); 
+        System.out.println("Bedroom Clock: " + bedroomClock); 
     }
 }

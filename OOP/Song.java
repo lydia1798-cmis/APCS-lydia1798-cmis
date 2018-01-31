@@ -7,9 +7,9 @@ public class Song
 
     //zero argument constructor
     public Song(){
-        name = "YMCA";
-        bpm = 120;
-        isGood = false;
+        this.name = "YMCA";
+        this.bpm = 120;
+        this.isGood = false;
     }
 
     public Song(String name, int bpm, boolean isGood){

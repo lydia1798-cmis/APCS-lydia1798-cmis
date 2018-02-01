@@ -1,7 +1,7 @@
 public class Card
 {
-    private String rank;
-    private String suit;
+    public String rank;
+    public String suit;
     private int cardNum;
     
     public Card(){

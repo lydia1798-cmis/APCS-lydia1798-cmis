@@ -32,57 +32,99 @@ public class CardDriver2
         for(int i = 0; i < 2; i++){
             System.out.println(Dealer[i]);
         }
+        System.out.println("Score: " + OneCardScore(Dealer[0].rank, Dealer[1].rank));
+        int DealerScore = OneCardScore(Dealer[0].rank, Dealer[1].rank);
+        
         System.out.println("\n");
         System.out.println("Player1:");
         for(int i = 0; i < 2; i++){
             System.out.println(Player1[i]);
         }
+        System.out.println("Score: " + OneCardScore(Player1[0].rank, Player1[1].rank));
+        int Player1Score = OneCardScore(Player1[0].rank, Player1[1].rank);
+        System.out.println(Winner(DealerScore, Player1Score, "Player1"));
         System.out.println("\n");
         System.out.println("Player2:");
         for(int i = 0; i < 2; i++){
             System.out.println(Player2[i]);
         }
+        System.out.println("Score: " + OneCardScore(Player2[0].rank, Player2[1].rank));
+        int Player2Score = OneCardScore(Player2[0].rank, Player2[1].rank);
+        System.out.println(Winner(DealerScore, Player2Score, "Player2"));
         System.out.println("\n");
         System.out.println("Player3:");
         for(int i = 0; i < 2; i++){
             System.out.println(Player3[i]);
         }
+        System.out.println("Score: " + OneCardScore(Player3[0].rank, Player3[1].rank));
+        int Player3Score = OneCardScore(Player3[0].rank, Player3[1].rank);
+        System.out.println(Winner(DealerScore, Player3Score, "Player3"));
         System.out.println("\n");
         System.out.println("Player4:");
         for(int i = 0; i < 2; i++){
             System.out.println(Player4[i]);
         }
+        System.out.println("Score: " + OneCardScore(Player4[0].rank, Player4[1].rank));
+        int Player4Score = OneCardScore(Player4[0].rank, Player4[1].rank);
+        System.out.println(Winner(DealerScore, Player4Score, "Player4"));
         System.out.println("\n");
         System.out.println("Player5:");
         for(int i = 0; i < 2; i++){
             System.out.println(Player5[i]);
         }
-        System.out.println("\n");
-        
-        //Total Score
-        OneCardScore(Dealer[0].rank, Dealer[0].suit);
+        System.out.println("Score: " + OneCardScore(Player5[0].rank, Player5[1].rank));
+        int Player5Score = OneCardScore(Player5[0].rank, Player5[1].rank);
+        System.out.println(Winner(DealerScore, Player5Score, "Player5"));                
     }
 
     //Calculate Total Score
-    public static int OneCardScore(String randomRank, String randomsuit){
+    public static int OneCardScore(String randomRank1, String randomRank2){
         //whether or not it's an int
-        int intRank = 0;
+        int intRank1 = 0;
         for(int rankNum = 2; rankNum < 11; rankNum++){           
-            if(randomRank.equals("Ace")){
-                int ace1 = 11;
-                int ace2 = 1;
+            if(randomRank1.equals("Ace")){
+                intRank1 = 11;
             }
-            else if(randomRank == String.valueOf(rankNum)){
-                intRank = rankNum;
+            else if(randomRank1.equals(String.valueOf(rankNum))){
+                intRank1 = rankNum;
             }
-            else if(randomRank.equals("Jack") || randomRank.equals("Queen") || randomRank.equals("King")){
-                intRank = 10;
+            else if(randomRank1.equals("Jack") || randomRank1.equals("Queen") || randomRank1.equals("King")){
+                intRank1 = 10;
             }
         }
-        return intRank;
+        int intRank2 = 0;
+        for(int rankNum = 2; rankNum < 11; rankNum++){
+            if(randomRank2.equals("Ace")){
+                intRank2 = 1;
+            }
+            else if(randomRank2.equals(String.valueOf(rankNum))){
+                intRank2 = rankNum;
+            }
+            else if(randomRank2.equals("Jack") || randomRank2.equals("Queen") || randomRank2.equals("King")){
+                intRank2 = 10;
+            }
+        }
+        int totalScore = intRank1 + intRank2;
+        return totalScore;
     }
 
-    //Compare total scores and decide winner
+    //Compare total scores and decide winner (playing against the Dealer)
+    public static String Winner(int Dealer, int player, String playername){
+        String out = "";
+        if(Dealer == 21 && player == 21){
+            out += "The Dealer won!";
+        }
+        else if(Dealer > player){
+            out += "The Dealer won!";            
+        }
+        else if(Dealer < player){
+            out += "The " + playername + " won!";
+        }
+        else if(Dealer == player){
+            out += "The Dealer won!";
+        }
+        return out;
+    }
     //Random Card generator
     public static String randomRank(){
         String[] ranrank = new String[]

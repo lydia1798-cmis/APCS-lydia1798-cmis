@@ -2,10 +2,12 @@
 comment0.target=CardDriver2
 comment1.params=
 comment1.target=void\ main()
-comment2.params=randomRank\ randomsuit
+comment2.params=randomRank1\ randomRank2
 comment2.target=int\ OneCardScore(java.lang.String,\ java.lang.String)
-comment3.params=
-comment3.target=java.lang.String\ randomRank()
+comment3.params=Dealer\ player\ playername
+comment3.target=java.lang.String\ Winner(int,\ int,\ java.lang.String)
 comment4.params=
-comment4.target=java.lang.String\ randomSuit()
-numComments=5
+comment4.target=java.lang.String\ randomRank()
+comment5.params=
+comment5.target=java.lang.String\ randomSuit()
+numComments=6

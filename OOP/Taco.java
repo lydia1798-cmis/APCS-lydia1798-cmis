@@ -28,4 +28,28 @@ public class Taco
         }
         return out;
     }
+    
+    public String getTopping1(){
+        return this.topping1;
+    }
+    
+    public void setTopping1(String newTopping1){
+        this.topping1 = newTopping1;
+    }
+    
+    public String getTopping2(){
+        return this.topping2;
+    }
+    
+    public void setTopping2(String newTopping2){
+        this.topping2 = newTopping2;
+    }
+    
+    public boolean getIsGood(){
+        return this.isgood;
+    }
+    
+    public void setIsGood(boolean isGood){
+        this.isgood = isGood;
+    }
 }

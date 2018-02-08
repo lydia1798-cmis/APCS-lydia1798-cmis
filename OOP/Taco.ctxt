@@ -2,6 +2,10 @@
 comment0.target=Taco
 comment1.params=
 comment1.target=Taco()
+comment10.params=topping1\ topping2
+comment10.target=boolean\ healthy(java.lang.String,\ java.lang.String)
+comment11.params=foodAdj\ topping1
+comment11.target=void\ combineToppings(java.lang.String,\ java.lang.String)
 comment2.params=topping1\ topping2\ isgood
 comment2.target=Taco(java.lang.String,\ java.lang.String,\ boolean)
 comment3.params=
@@ -18,4 +22,4 @@ comment8.params=
 comment8.target=boolean\ getIsGood()
 comment9.params=isGood
 comment9.target=void\ setIsGood(boolean)
-numComments=10
+numComments=12

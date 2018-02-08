@@ -3,10 +3,15 @@ public class Taco
     private String topping1;
     private String topping2;
     private boolean isgood;
+    private int length;
+    private double height;
+    private String eater;
+    
+    public static String[] salsaType = new String[]{"Spicy salsa", "mild salsa", "chill salsa", "this isn't salsa"};
     
     public Taco(){
-        this.topping1 = "cheese";
-        this.topping2 = "salsa";
+        this.topping1 = salsaType[(int) Math.random() * 3];
+        this.topping2 = "CHEESE";
         this.isgood = true;
     }
     
@@ -29,6 +34,7 @@ public class Taco
         return out;
     }
     
+    //Getters and Setter
     public String getTopping1(){
         return this.topping1;
     }
@@ -51,5 +57,19 @@ public class Taco
     
     public void setIsGood(boolean isGood){
         this.isgood = isGood;
+    }
+    
+    //Accesors and Mutators
+    public boolean healthy(String topping1, String topping2){
+        if(topping1.equals("CHEESE") || topping2.equals("CHEESE")){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    
+    public void combineToppings(String foodAdj, String topping1){
+        this.topping1 = foodAdj + topping1;
     }
 }

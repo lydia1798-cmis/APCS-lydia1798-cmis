@@ -8,5 +8,6 @@ public class TacoDriver
         System.out.println(taco1.healthy("CHEESE", "spinach"));
         taco1.combineToppings("chicken ", "sour cream");
         System.out.println(taco1);
+        taco1.Eaten(true, 8);
     }
 }

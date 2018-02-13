@@ -2,8 +2,12 @@
 comment0.target=Song
 comment1.params=
 comment1.target=Song()
-comment2.params=name\ bpm\ isGood
-comment2.target=Song(java.lang.String,\ int,\ boolean)
+comment2.params=name\ bpm\ isGood\ yearReleased
+comment2.target=Song(java.lang.String,\ int,\ boolean,\ int)
 comment3.params=
-comment3.target=java.lang.String\ toString()
-numComments=4
+comment3.target=int\ getYearReleased()
+comment4.params=yearReleased
+comment4.target=void\ setYearReleased(int)
+comment5.params=
+comment5.target=java.lang.String\ toString()
+numComments=6

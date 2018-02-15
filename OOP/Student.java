@@ -5,6 +5,9 @@ public class Student
     private int grade;
     private boolean isMale;
     private double[] grades = new double[5];
+    private String school1 = "Stanford"; 
+    private String school2 = "Oregon"; 
+    private String school3 = "UCLA"; 
 
     public Student(){
         this.firstName = "Lydia";
@@ -24,7 +27,7 @@ public class Student
         this.grades[3] = fineArts;
         this.grades[4] = socialScience;
     }
-    
+
     public void setGPA(double english, double math, double science, double fineArts, double socialScience){        
         this.grades[0] = english;
         this.grades[1] = math;
@@ -32,7 +35,7 @@ public class Student
         this.grades[3] = fineArts;
         this.grades[4] = socialScience;
     }
-    
+
     public double calcGPA(){
         double sum = 0;
         for(int i = 0; i < 5; i++){
@@ -42,17 +45,31 @@ public class Student
         return finalGPA;
     }
 
-    public String toString(){
-        String out = "";
-        out += firstName + " " + lastName;
-        out += " is in grade " + grade;
-        if(isMale == false){
-            out += " and is a girl. ";
+    public String getGrade(){
+        if(calcGPA() > 4.00){
+            return "A";
+        }
+        else if(calcGPA() > 3.00){
+            return "B";
+        }
+        else if(calcGPA() > 2.00){
+            return "C";
+        }
+        else if(calcGPA() > 1.00){
+            return "D";
         }
         else{
-            out += " and is a guy. ";
+            return "F";
         }
-        out += "Overall GPA: " + calcGPA() + "\n";
+    }
+
+    public String toString(){
+        String out = "";
+        out += "Student's First Name is: " + firstName + "\n";
+        out += "\nStudent's Last Name is: " + lastName + "\n";
+        out += "Student's Average GPA is: " + calcGPA() + "\n";
+        out += firstName + "'s Grade: " + getGrade() + "\n";
+        out += Double.toString(grades[0]) + " " + Double.toString(grades[1]) + " " + Double.toString(grades[2]) + " " + Double.toString(grades[3]) + " " + Double.toString(grades[4]);
         return out;
     }
 }

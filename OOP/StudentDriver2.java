@@ -5,5 +5,7 @@ public class StudentDriver2
         System.out.println("#1: "+ senior + "\n");
         senior.setGPA(4.0, 4.0, 4.0, 4.0, 4.0);
         System.out.println("#2: "+ senior + "\n");
+        
+        
     }
 }

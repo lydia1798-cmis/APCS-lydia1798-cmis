@@ -2,8 +2,12 @@
 comment0.target=Student
 comment1.params=
 comment1.target=Student()
-comment2.params=firstName\ lastName\ grade\ isMale
-comment2.target=Student(java.lang.String,\ java.lang.String,\ int,\ boolean)
-comment3.params=
-comment3.target=java.lang.String\ toString()
-numComments=4
+comment2.params=firstName\ lastName\ grade\ isMale\ english\ math\ science\ fineArts\ socialScience
+comment2.target=Student(java.lang.String,\ java.lang.String,\ int,\ boolean,\ double,\ double,\ double,\ double,\ double)
+comment3.params=english\ math\ science\ fineArts\ socialScience
+comment3.target=void\ setGPA(double,\ double,\ double,\ double,\ double)
+comment4.params=
+comment4.target=double\ calcGPA()
+comment5.params=
+comment5.target=java.lang.String\ toString()
+numComments=6

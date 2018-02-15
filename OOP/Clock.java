@@ -7,9 +7,9 @@ public class Clock
     
     //zero argumnet constructor
     public Clock(){
-        hours = 01;
-        mins = 5;
-        secs = 13;
+        hours = 0;
+        mins = 0;
+        secs = 0;
     }
     
     //constructor with arguments
@@ -21,13 +21,13 @@ public class Clock
             this.hours = hours;
         }
         if(mins < 0 || mins > 60){
-            this.mins = 30;
+            this.mins = 0;
         }
         else{
             this.mins = mins;
         }
         if(secs > 60 || secs < 0){
-            this.secs = 31;
+            this.secs = 0;
         }
         else{
             this.secs = secs;

@@ -4,16 +4,14 @@ public class password
 {
     public static void main(){
         String passwordInput = "";
-        boolean truee = false;
-        while(truee == false){
-
+        boolean stop = false;
+        while(stop == false){
             passwordInput = JOptionPane.showInputDialog("Password: ");  
-
             if(length(passwordInput) == true && nonalphaChar(passwordInput) == true){
-                truee = true;
+                stop = true;
             }
             else{
-                truee = false;
+                stop = false;
             }
         }
     }
@@ -30,28 +28,14 @@ public class password
     //+  -  * /  @ 
     public static boolean nonalphaChar(String password){  
         boolean hitone = false;
+        String all = "+-*/@";
         for(int i = 0; i < password.length(); i++){
-            if(password.substring(i, i+1).equals("+")){
-                hitone = true;
-            }
-            if(password.substring(i, i+1).equals("-")){
-                hitone = true;
-            }
-            if(password.substring(i, i+1).equals("*")){
-                hitone = true;
-            }
-            if(password.substring(i, i+1).equals("/")){
-                hitone = true;
-            }
-            if(password.substring(i, i+1).equals("@")){
-                hitone = true;
-            }
-        }
-        if(hitone == true){
-            return true;
-        }
-        else{
-            return false;
-        }
+            for(int i2 = 0; i2 < all.length(); i2++){
+                if(password.substring(i, i+1).equals(all.substring(i2, i2+1))){
+                    hitone = true;
+                }
+            }            
+        }     
+        return hitone;
     }
 }

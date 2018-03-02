@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Flashlight
+comment1.params=
+comment1.target=void\ toggle()
+comment1.text=\n\ Methods\ for\ you\ to\ implement\n\ toggle\:\ changes\ the\ state\ from\ on\ to\ off\ and\ vice\ versa\n\ changeColor(String\ newColor)\:\ change\ the\ lightColor\ but\ only\ to\ one\ of\ the\ validColors\ \n\ incIntensity\:\ increase\ the\ intensity\ by\ one\ up\ to\ a\ maximum\ of\ 5\n\ decIntensity\:\ decrease\ the\ intensity\ by\ one\ down\ to\ a\ minimum\ of\ 0\n\ getIntensityDescription\:\ retrieve\ a\ narrative\ description\ of\ the\ intensity\ level\n
+comment2.params=newColor
+comment2.target=void\ changeColor(java.lang.String)
+comment3.params=
+comment3.target=void\ incIntensity()
+comment4.params=
+comment4.target=void\ decIntensity()
+comment5.params=
+comment5.target=java.lang.String\ getIntensityDescription()
+comment6.params=
+comment6.target=java.lang.String\ toString()
+comment6.text=\ Sample\ output\ \n\ \ \ \ Test\ toggle\n\ \ \ \ \=\=\=\=\=\=\=\=\=\=\=\n\ \ \ \ The\ flashlight\ is\ off.\n\ \ \ \ There\ is\ a\ medium\ white\ light\ emanating\ from\ the\ flashlight.\n\ \ \ \ The\ flashlight\ is\ off.\n\ \ \ \ Test\ changeColor\n\ \ \ \ \=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\n\ \ \ \ There\ is\ a\ medium\ white\ light\ emanating\ from\ the\ flashlight.\n\ \ \ \ There\ is\ a\ medium\ red\ light\ emanating\ from\ the\ flashlight.\n\ \ \ \ There\ is\ a\ medium\ blue\ light\ emanating\ from\ the\ flashlight.\n\ \ \ \ There\ is\ a\ medium\ yellow\ light\ emanating\ from\ the\ flashlight.\n\ \ \ \ There\ is\ a\ medium\ white\ light\ emanating\ from\ the\ flashlight.\n\ \ \ \ There\ is\ a\ medium\ white\ light\ emanating\ from\ the\ flashlight.\n\ \ \ \ There\ is\ a\ medium\ white\ light\ emanating\ from\ the\ flashlight.\n\ \ \ \ There\ is\ a\ medium\ white\ light\ emanating\ from\ the\ flashlight.\n\ \ \ \ There\ is\ a\ medium\ white\ light\ emanating\ from\ the\ flashlight.\n\ \ \ \ Test\ getIntensity,\ decIntensity,\ incIntensity\n\ \ \ \ \=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\n\ \ \ \ medium\n\ \ \ \ dim\n\ \ \ \ extremly\ dim\n\ \ \ \ extremly\ dim\n\ \ \ \ extremly\ dim\n\ \ \ \ extremly\ dim\n\ \ \ \ extremly\ dim\n\ \ \ \ extremly\ dim\n\ \ \ \ extremly\ dim\n\ \ \ \ extremly\ dim\n\ \ \ \ extremly\ dim\n\ \ \ \ dim\n\ \ \ \ medium\n\ \ \ \ bright\n\ \ \ \ retina\ searingly\ bright\n\ \ \ \ retina\ searingly\ bright\n\ \ \ \ retina\ searingly\ bright\n\ \ \ \ retina\ searingly\ bright\n\ \ \ \ retina\ searingly\ bright\n\ \ \ \ retina\ searingly\ bright\n\ \ \ \ retina\ searingly\ bright\n
+comment7.params=args
+comment7.target=void\ main(java.lang.String[])
+numComments=8

@@ -1,9 +1,9 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class MyPod{    
     private String color;
     private int GB;
-    private ArrayList<Song> songLibrary = new ArrayList<Song>(3);
+    private List<Song> songLibrary = new ArrayList<Song>(3);
     
     
     //Zero argument constructor
@@ -29,9 +29,9 @@ public class MyPod{
     
     public String toString(){
         String out = "";
-        out += "The ipods color is " + this.color + "\n";
-        out += "It contains " + GB + " gigabites.\n";
-        out += "It has these songs: ";
+        out += "The ipod is " + this.color + ".";
+        out += "It contains " + GB + " gigabites and ";
+        out += "it has these songs:\n";
         for(Song s: songLibrary){
             out += s;
         }

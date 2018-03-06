@@ -30,29 +30,34 @@ public class Song
         this.isGood = isGood;
         this.yearReleased = yearReleased + 7;
     }
-    
+
     public int getYearReleased(){
-       return this.yearReleased; 
+        return this.yearReleased; 
     }
 
     public void setYearReleased(int yearReleased){
         this.yearReleased = yearReleased;
     }
-    
+
     public String convertMinToSec(int lengthInSec){
         String out = "";
         int sec = lengthInSec%60;
         int min = lengthInSec/60;
-        out += "The length of the song is: " + min + " minutes and " + sec + " seconds.\n";
+        out += "    The length of the song is: " + min + " minutes and " + sec + " seconds.\n";
         return out;
     }
-    
+
     public String toString(){
         String out = "";
-        out += "Name: " + name + "\n";
-        out += "Beats per Minute: " + bpm + "\n";
-        out += "This is a good song. " + isGood + "\n";
-        out += "The year this song was released was: " + yearReleased + "\n";
+        out += "\n    Name: " + name + "\n";
+        out += "    Beats per Minute: " + bpm + "\n";
+        if(isGood == true){       
+            out += "    This is a good song.\n";
+        }
+        else{
+            out += "    This is a bad song.\n";
+        }
+        out += "    The year this song was released was: " + yearReleased + "\n";
         out += convertMinToSec(343);
         return out;
     }

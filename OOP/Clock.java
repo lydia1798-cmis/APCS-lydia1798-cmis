@@ -59,7 +59,7 @@ public class Clock
         out += hours + ":";
         out += mins + ":";
         out += secs + "\n";
-        out += "Total seconds: " + totalSeconds();
+        //out += "Total seconds: " + totalSeconds();
         return out;
     }
 }

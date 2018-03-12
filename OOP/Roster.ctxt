@@ -1,5 +1,9 @@
 #BlueJ class context
 comment0.target=Roster
 comment1.params=
-comment1.target=Roster()
-numComments=2
+comment1.target=void\ main()
+comment2.params=
+comment2.target=Roster()
+comment3.params=
+comment3.target=Student\ findStudentWithMaxGPA()
+numComments=4

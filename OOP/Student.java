@@ -44,6 +44,7 @@ public class Student
         double finalGPA = sum/5;
         return finalGPA;
     }
+        
 
     public String getGrade(){
         if(calcGPA() > 4.00){

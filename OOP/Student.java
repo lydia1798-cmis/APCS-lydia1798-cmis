@@ -47,7 +47,7 @@ public class Student
         
 
     public String getGrade(){
-        if(calcGPA() > 4.00){
+        if(calcGPA() == 4.00){
             return "A";
         }
         else if(calcGPA() > 3.00){
@@ -64,14 +64,21 @@ public class Student
         }
     }
         
+    public String getName(){
+        return this.firstName + " " + this.lastName;        
+    }    
+    
+    public String getLastName(){
+        return this.lastName;
+    }
 
     public String toString(){
         String out = "";
-        out += "Student's First Name is: " + firstName + "\n";
-        out += "\nStudent's Last Name is: " + lastName + "\n";
-        out += "Student's Average GPA is: " + calcGPA() + "\n";
-        out += firstName + "'s Grade: " + getGrade() + "\n";
-        out += Double.toString(grades[0]) + " " + Double.toString(grades[1]) + " " + Double.toString(grades[2]) + " " + Double.toString(grades[3]) + " " + Double.toString(grades[4]);
+        out += "    Student's First Name is: " + firstName + "\n";
+        out += "    Student's Last Name is: " + lastName + "\n";
+        out += "    Student's Average GPA is: " + calcGPA() + "\n";
+        out += "    " + firstName + "'s Grade: " + getGrade() + "\n";
+        //out += Double.toString(grades[0]) + " " + Double.toString(grades[1]) + " " + Double.toString(grades[2]) + " " + Double.toString(grades[3]) + " " + Double.toString(grades[4]);
         return out;
     }
 }

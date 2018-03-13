@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Roster2
+comment1.params=
+comment1.target=void\ main()
+comment2.params=newStudent
+comment2.target=void\ addStudent(Student)
+comment3.params=lastName
+comment3.target=void\ dropStudent(java.lang.String)
+numComments=4

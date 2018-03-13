@@ -1,9 +1,11 @@
 public class Roster
 {
     private Student[] students = new Student[3];
-    
+
+    //ROSTER DRIVER
     public static void main(){
         Roster roster1 = new Roster();
+        System.out.println(roster1);        
     }
 
     public Roster(){
@@ -12,7 +14,7 @@ public class Roster
         students[2] = new Student("Miriam", "Ritchie", 12, false, 4.0, 3.2, 3.7, 3.8, 3.9);        
     }       
 
-    public Student findStudentWithMaxGPA(){
+    public String findStudentWithMaxGPA(){
         double maxGPA = 0;
         int index = 0;
         for(int i = 0; i < students.length; i++){
@@ -20,8 +22,17 @@ public class Roster
                 maxGPA = students[i].calcGPA();
                 index = i;
             }
-        }
-        System.out.print(maxGPA);
-        return students[index];
+        }        
+        return students[index].getName();
+    }
+
+    public String toString(){
+        String out = "";
+        for(int i = 0; i < students.length; i++){        
+            out += "Student #" + i + ":\n";
+            out += students[i] + "\n";
+        }        
+        out += findStudentWithMaxGPA() + " has the best GPA.\n";
+        return out;
     }
 }

@@ -10,8 +10,7 @@ public class MyPod{
     public MyPod(){
         this.color = "blue";
         this.GB = 12;
-        Song song1 = new Song("YMCA", 123, true, 2013);
-        this.songLibrary.add(0, song1);
+        this.songLibrary.add(0, new Song("YMCA", 123, true, 2013));
         Song song2 = new Song("Here Comes The Sun", 123, true, 2013);
         this.songLibrary.add(1, song2);
         Song song3 = new Song("Yesterday", 123, true, 2013);

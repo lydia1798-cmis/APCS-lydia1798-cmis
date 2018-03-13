@@ -2,8 +2,12 @@
 comment0.target=Roster2
 comment1.params=
 comment1.target=void\ main()
-comment2.params=newStudent
-comment2.target=void\ addStudent(Student)
-comment3.params=lastName
-comment3.target=void\ dropStudent(java.lang.String)
-numComments=4
+comment2.params=
+comment2.target=Roster2()
+comment3.params=newStudent
+comment3.target=void\ addStudent(Student)
+comment4.params=lastName
+comment4.target=void\ dropStudent(java.lang.String)
+comment5.params=
+comment5.target=java.lang.String\ toString()
+numComments=6

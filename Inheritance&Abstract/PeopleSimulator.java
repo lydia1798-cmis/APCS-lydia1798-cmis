@@ -2,8 +2,9 @@ public class PeopleSimulator
 {
     public static void main(){
         System.out.println("PeopleSimulator");
-        Teacher t = new Teacher();
-        Politician p = new Politician();
+        Cook c = new Cook("Liz", 4, "carrots", "salt", "pepper");
+        Politician p = new Politician("it", false);
         System.out.println(p);
+        System.out.println(c.feed(p, "carrots"));
     }
 }

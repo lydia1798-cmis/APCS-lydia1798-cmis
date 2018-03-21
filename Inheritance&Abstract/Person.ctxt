@@ -1,3 +1,19 @@
 #BlueJ class context
 comment0.target=Person
-numComments=1
+comment1.params=name
+comment1.target=Person(java.lang.String)
+comment2.params=food
+comment2.target=boolean\ eat(java.lang.String)
+comment3.params=
+comment3.target=double\ getLifeForce()
+comment4.params=newLifeForce
+comment4.target=void\ setLifeForce(double)
+comment5.params=dx\ dy
+comment5.target=boolean\ move(int,\ int)
+comment6.params=
+comment6.target=java.lang.String\ getName()
+comment7.params=newName
+comment7.target=void\ setName(java.lang.String)
+comment8.params=
+comment8.target=java.lang.String\ toString()
+numComments=9

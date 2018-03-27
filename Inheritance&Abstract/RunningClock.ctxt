@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=RunningClock
+comment1.params=type\ memory\ maxSpeedmph\ wakeUpTime
+comment1.target=RunningClock(java.lang.String,\ int,\ int,\ double)
+comment2.params=
+comment2.target=java.lang.String\ whereItGoes()
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4

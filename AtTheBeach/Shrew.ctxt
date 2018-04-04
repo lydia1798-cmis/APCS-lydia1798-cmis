@@ -1,5 +1,5 @@
 #BlueJ class context
-comment0.target=shrew
+comment0.target=Shrew
 comment1.params=food
 comment1.target=boolean\ eat(greenfoot.Actor)
 comment2.params=

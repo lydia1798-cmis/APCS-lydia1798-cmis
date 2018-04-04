@@ -1,8 +1,8 @@
 #Greenfoot properties
-#Thu Mar 29 13:35:35 ICT 2018
+#Wed Apr 04 11:09:18 ICT 2018
 project.charset=UTF-8
-class.shrew.image=lemur.png
 mainWindow.height=600
+class.shrew.image=lemur.png
 version=3.0.0
 class.Banana.image=bananas.png
 class.Cherry.superclass=Fruit

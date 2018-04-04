@@ -1,6 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Starfish extends Animal
+
+  
 {
     public boolean eat(Actor food){
         boolean success = false;

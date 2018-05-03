@@ -9,17 +9,13 @@ public class Seal extends Actor
     public Seal(){
         img.scale(30, 30);
     }
+    
     public void act() 
-    {         
-
-        if(Math.random() > 0.50){
-            move(lifeForce/20);            
-            if(turns == isTurning){
-                turn((int)(Math.random() * 360));
-                turns = 0;
-            }
-            turns++;
-        }       
-    }    
+    {   
+        if(Greenfoot.mousePressed(getWorld()) == true){
+            
+        setLocation(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
+     
+    }    }
 
 }

@@ -11,8 +11,9 @@ public class MyWorld extends World
         for(int i = 0; i < 10; i++){
             addObject(new Seal(), 200, 100);
         }       
-        Greenfoot.stop();
+        //Greenfoot.stop();
     }
+
 
     public void act(){    
         // if(pushed == false && Greenfoot.isKeyDown("space") == true){

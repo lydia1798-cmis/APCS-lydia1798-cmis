@@ -1,13 +1,11 @@
 #Greenfoot properties
-#Thu May 03 14:34:56 ICT 2018
+#Mon May 07 08:41:21 ICT 2018
 readme.name=@README
 class.Snowman.image=seal.png
 target2.name=MyWorld
 simulation.speed=50
 dependency1.from=MyWorld
 target2.showInterface=false
-class.Pengiun.image=tux.png
-class.Pengiun.superclass=greenfoot.Actor
 class.Seal.superclass=greenfoot.Actor
 class.Snowman.superclass=greenfoot.Actor
 target1.type=ClassTarget
@@ -43,5 +41,6 @@ world.lastInstantiated=MyWorld
 dependency1.type=UsesDependency
 version=3.0.0
 package.numDependencies=1
+class.ColorBlock.superclass=greenfoot.Actor
 project.charset=UTF-8
 readme.height=58

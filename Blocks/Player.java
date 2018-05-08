@@ -4,6 +4,7 @@ public class Player extends Actor
 {
     private Color color = Color.PINK;
     private GreenfootImage img;
+    private boolean isFollowing = false;
 
     public Player(Color color){
         img = new GreenfootImage(10, 10);
@@ -15,9 +16,26 @@ public class Player extends Actor
     //setLocation(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
 
     public void act() {
-        if(Greenfoot.getMouseInfo() != null){
+        wasKeyPressed();  
+        if(Greenfoot.getMouseInfo() != null && isFollowing == true){
             setLocation(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
         }                                         
+    }            
+
+    public void wasKeyPressed(){
+        if(Greenfoot.isKeyDown("Space") == true && isFollowing == false){
+            isFollowing = true;
+        }        
+        else if(Greenfoot.isKeyDown("Space") == false && isFollowing == true){ 
+            isFollowing = true;
+        }
+        else if(Greenfoot.isKeyDown("Space") == true && isFollowing == true){ 
+            isFollowing = false;
+        }
+        else if(Greenfoot.isKeyDown("Space") == false && isFollowing == false){ 
+            isFollowing = false;
+        }
     }
 }
+
 

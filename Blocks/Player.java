@@ -23,19 +23,12 @@ public class Player extends Actor
     }            
 
     public void wasKeyPressed(){
-        if(Greenfoot.isKeyDown("Space") == true && isFollowing == false){
+        if(Greenfoot.isKeyDown("Space") == true && isFollowing == false || Greenfoot.isKeyDown("Space") == false && isFollowing == true){
             isFollowing = true;
+        } 
+        else if(Greenfoot.isKeyDown("Space") == true && isFollowing == true || Greenfoot.isKeyDown("Space") == false && isFollowing == false){ 
+            isFollowing = false;
         }        
-        else if(Greenfoot.isKeyDown("Space") == false && isFollowing == true){ 
-            isFollowing = true;
-        }
-        else if(Greenfoot.isKeyDown("Space") == true && isFollowing == true){ 
-            isFollowing = false;
-        }
-        else if(Greenfoot.isKeyDown("Space") == false && isFollowing == false){ 
-            isFollowing = false;
-        }
     }
 }
-
 

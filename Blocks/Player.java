@@ -18,17 +18,20 @@ public class Player extends Actor
     public void act() {
         wasKeyPressed();  
         if(Greenfoot.getMouseInfo() != null && isFollowing == true){
-            setLocation(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
-        }                                         
+            setLocation(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());            
+        }                                
     }            
 
     public void wasKeyPressed(){
-        if(Greenfoot.isKeyDown("Space") == true && isFollowing == false || Greenfoot.isKeyDown("Space") == false && isFollowing == true){
-            isFollowing = true;
-        } 
-        else if(Greenfoot.isKeyDown("Space") == true && isFollowing == true || Greenfoot.isKeyDown("Space") == false && isFollowing == false){ 
-            isFollowing = false;
-        }        
+        String keyPressed = Greenfoot.getKey();
+        if(keyPressed != null && keyPressed.equals("space")){
+            if(isFollowing == true){
+                isFollowing = false;
+            }
+            else{
+                isFollowing = true;
+            }
+        }
     }
 }
 

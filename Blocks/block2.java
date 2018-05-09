@@ -1,12 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class Player extends Actor
+public class block2 extends Actor
 {
     private Color color;
     private GreenfootImage img;
-    private boolean isFollowing = false;
+    private boolean isFollowing = true;
 
-    public Player(Color color){
+    public block2(Color color){
         img = new GreenfootImage(10, 10);
         img.setColor(color);
         img.fill();
@@ -25,11 +25,11 @@ public class Player extends Actor
     public void wasKeyPressed(){
         String keyPressed = Greenfoot.getKey();
         if(keyPressed != null && keyPressed.equals("space")){
-            if(isFollowing == true){
-                isFollowing = false;
+            if(isFollowing == false){
+                isFollowing = true;
             }
             else{
-                isFollowing = true;
+                isFollowing = false;
             }
         }
     }

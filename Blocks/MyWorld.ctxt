@@ -2,8 +2,6 @@
 comment0.target=MyWorld
 comment1.params=
 comment1.target=MyWorld()
-comment2.params=block
-comment2.target=void\ createMaze(ColorBlock)
-comment3.params=
-comment3.target=void\ act()
-numComments=4
+comment2.params=
+comment2.target=void\ act()
+numComments=3

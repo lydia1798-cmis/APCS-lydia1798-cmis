@@ -18,7 +18,8 @@ public class Player extends Actor
     public void act() {
         wasKeyPressed();  
         if(Greenfoot.getMouseInfo() != null && isFollowing == true){
-            setLocation(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());            
+            setLocation(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
+            Trail();
         }                                
     }            
 
@@ -31,6 +32,14 @@ public class Player extends Actor
             else{
                 isFollowing = true;
             }
+        }
+    }
+
+    public void Trail(){
+        if(isFollowing == true){
+            MyWorld fancy = (MyWorld) getWorld();
+            trail t1 = new trail(Color.BLUE);
+            fancy.addObject(t1, getX(), getY());
         }
     }
 }

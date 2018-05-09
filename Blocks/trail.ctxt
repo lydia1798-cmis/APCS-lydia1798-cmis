@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=trail
+comment1.params=color
+comment1.target=trail(greenfoot.Color)
+comment2.params=
+comment2.target=void\ act()
+numComments=3

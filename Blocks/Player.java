@@ -17,11 +17,14 @@ public class Player extends Actor
 
     public void act() {
         wasKeyPressed();  
+        followMouse();                                
+    }   
+
+    public void followMouse(){                                        
         if(Greenfoot.getMouseInfo() != null && isFollowing == true){
             setLocation(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
-            Trail();
-        }                                
-    }            
+        }
+    }
 
     public void wasKeyPressed(){
         String keyPressed = Greenfoot.getKey();
@@ -33,7 +36,7 @@ public class Player extends Actor
                 isFollowing = true;
             }
         }
-    }
+    }    
 
     public void Trail(){
         if(isFollowing == true){
@@ -43,4 +46,5 @@ public class Player extends Actor
         }
     }
 }
+
 

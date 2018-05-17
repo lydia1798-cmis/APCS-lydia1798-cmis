@@ -28,7 +28,6 @@ public class ColorBlock extends Actor
 
     public void isTouchingPlayer(){        
         if(isTouching(Player.class) == true){ 
-            System.out.println("istouching");
             istouching = true;
         }
     }

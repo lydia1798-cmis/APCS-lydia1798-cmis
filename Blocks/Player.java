@@ -4,10 +4,11 @@ public class Player extends Actor
 {
     private Color color;
     private GreenfootImage img;
+    private GreenfootImage trail;
     private boolean isFollowing = false;
 
     public Player(Color color){
-        img = new GreenfootImage(10, 10);
+        img = new GreenfootImage(5, 5);
         img.setColor(color);
         img.fill();
         setImage(img);
@@ -17,12 +18,13 @@ public class Player extends Actor
 
     public void act() {
         wasKeyPressed();  
-        followMouse();                                
+        followMouse(); 
+        Trail();
     }   
 
     public void followMouse(){                                        
         if(Greenfoot.getMouseInfo() != null && isFollowing == true){
-            setLocation(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
+            setLocation(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());            
         }
     }
 
@@ -39,12 +41,12 @@ public class Player extends Actor
     }    
 
     public void Trail(){
-        if(isFollowing == true){
+        if(isFollowing == true && Greenfoot.getMouseInfo() != null){           
             MyWorld fancy = (MyWorld) getWorld();
-            trail t1 = new trail(Color.BLUE);
-            fancy.addObject(t1, getX(), getY());
+            GreenfootImage background = fancy.getBackground();
+            background.setColor(Color.BLACK);
+            background.drawLine(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY(), Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
         }
     }
 }
-
 

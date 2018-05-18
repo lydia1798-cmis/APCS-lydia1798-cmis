@@ -6,6 +6,9 @@ public class Player extends Actor
     private GreenfootImage img;
     private GreenfootImage trail;
     private boolean isFollowing = false;
+    private int startingX;
+    private int startingY;
+    private int thickness = 10;
 
     public Player(Color color){
         img = new GreenfootImage(5, 5);
@@ -18,8 +21,15 @@ public class Player extends Actor
 
     public void act() {
         wasKeyPressed();  
-        followMouse(); 
+        //followMouse(); 
+        if(Greenfoot.getMouseInfo() != null){
+            setLocation(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
+        }
         Trail();
+        if(Greenfoot.getMouseInfo() != null && isFollowing == true){
+            startingX = Greenfoot.getMouseInfo().getX();
+            startingY = Greenfoot.getMouseInfo().getY();
+        }
     }   
 
     public void followMouse(){                                        
@@ -36,17 +46,24 @@ public class Player extends Actor
             }
             else{
                 isFollowing = true;
+                startingX = Greenfoot.getMouseInfo().getX();
+                startingY = Greenfoot.getMouseInfo().getY();
             }
         }
     }    
 
     public void Trail(){
-        if(isFollowing == true && Greenfoot.getMouseInfo() != null){           
-            MyWorld fancy = (MyWorld) getWorld();
-            GreenfootImage background = fancy.getBackground();
-            background.setColor(Color.BLACK);
-            background.drawLine(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY(), Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
+        if(isFollowing == true && Greenfoot.getMouseInfo() != null){ 
+            for(int i = 1, i2 = 0; i < thickness; i++, i2++){
+                MyWorld fancy = (MyWorld) getWorld();
+                GreenfootImage background = fancy.getBackground();
+                background.setColor(Color.BLACK);
+                    background.drawLine(startingX + i, startingY + i, Greenfoot.getMouseInfo().getX() + i2, Greenfoot.getMouseInfo().getY() + i2);
+                
+                    background.drawLine(startingX - i, startingY - i, Greenfoot.getMouseInfo().getX() - i2, Greenfoot.getMouseInfo().getY() - i2);
+                }
+            }
         }
     }
-}
+
 

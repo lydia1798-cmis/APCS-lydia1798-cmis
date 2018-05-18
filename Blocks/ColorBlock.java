@@ -38,10 +38,10 @@ public class ColorBlock extends Actor
 
     public void followMouse2(){    
         MouseInfo info = Greenfoot.getMouseInfo();
-        if(Greenfoot.getMouseInfo() != null)
+        if(Greenfoot.getMouseInfo() != null){
             setLocation(info.getX(), info.getY());
         }
-    
+    }
 
     public void wasKeyPressed(){
         String keyPressed = Greenfoot.getKey();

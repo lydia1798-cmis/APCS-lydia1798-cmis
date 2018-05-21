@@ -1,7 +1,7 @@
 #BlueJ class context
-comment0.target=ColorBlock
+comment0.target=FillColor
 comment1.params=color
-comment1.target=ColorBlock(greenfoot.Color)
+comment1.target=FillColor(greenfoot.Color)
 comment2.params=
 comment2.target=void\ act()
 comment3.params=

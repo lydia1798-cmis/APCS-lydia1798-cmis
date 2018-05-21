@@ -1,13 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class ColorBlock extends Actor   
+public class FillColor extends Image   
 { //EXPLODE
     private static Color color;
     private GreenfootImage img;
     private boolean isFollowing = false;
     private boolean istouching = false;
 
-    public ColorBlock(Color color){
+    public FillColor(Color color){
+        super(color);
         this.color = color;
         img = new GreenfootImage(5, 5);
         img.setColor(color);

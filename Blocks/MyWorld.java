@@ -2,12 +2,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class MyWorld extends World
 {
-    public static final int numSnowmen = 3;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
-        addObject(new Player(Color.PINK), 50, 50);    
+        addObject(new NormalLine(Color.PINK), 50, 50);  
+        addObject(new Firework(Color.BLUE), 10, 50);  
         
         // for(int i2 = 0; i2 < 400; i2 += 5){
             // for(int i = 0; i < 600; i += 5){

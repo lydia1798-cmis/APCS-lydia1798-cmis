@@ -1,13 +1,13 @@
 #BlueJ class context
-comment0.target=Player
+comment0.target=AllBrushes
 comment1.params=color
-comment1.target=Player(greenfoot.Color)
+comment1.target=AllBrushes(greenfoot.Color)
 comment2.params=
-comment2.target=void\ act()
+comment2.target=void\ Trail()
 comment3.params=
 comment3.target=void\ followMouse()
 comment4.params=
 comment4.target=void\ wasKeyPressed()
 comment5.params=
-comment5.target=void\ Trail()
+comment5.target=void\ act()
 numComments=6

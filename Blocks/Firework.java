@@ -1,24 +1,30 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-public class shape extends AllBrushes
-{
-    private GreenfootImage img;
 
-    public shape(Color color, int w, int l){
+public class Firework extends AllBrushes
+{ //EXPLODE
+    private GreenfootImage img;
+    
+    public Firework(Color color){
         super(color);
-        img = new GreenfootImage(w, l);
+        this.color = color;
+        img = new GreenfootImage(5, 5);
         img.setColor(color);
+        img.fill();
+        setImage(img);
     }
 
     public void Trail(){
         if(isFollowing == true && Greenfoot.getMouseInfo() != null){         
             MyWorld fancy = (MyWorld) getWorld();
             GreenfootImage background = fancy.getBackground();
+            background.setColor(Color.BLACK);
+            background.drawLine(startingX, startingY, Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
         }
     }
     
     public void wasKeyPressed(){
         String keyPressed = Greenfoot.getKey();
-        if(keyPressed != null && keyPressed.equals("space")){
+        if(keyPressed != null && keyPressed.equals("a")){
             if(isFollowing == true){
                 isFollowing = false;
             }
@@ -35,9 +41,11 @@ public class shape extends AllBrushes
     }
 
     public void act() 
-    {
+    {  
         wasKeyPressed();  
         followMouse(); 
-        Trail();
-    }    
+        //Trail();
+    }
+
+       
 }

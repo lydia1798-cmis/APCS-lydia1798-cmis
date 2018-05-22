@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=NormalLine
+comment1.params=color
+comment1.target=NormalLine(greenfoot.Color)
+comment2.params=
+comment2.target=void\ followMouse()
+comment3.params=
+comment3.target=void\ act()
+comment4.params=
+comment4.target=void\ Trail()
+comment5.params=
+comment5.target=void\ wasKeyPressed()
+numComments=6

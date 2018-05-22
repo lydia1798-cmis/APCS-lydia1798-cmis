@@ -40,10 +40,10 @@ public class NormalLine extends AllBrushes
 
     public void Trail(){
         if(isFollowing == true && Greenfoot.getMouseInfo() != null){         
-            MyWorld fancy = (MyWorld) getWorld();
+            Canvas fancy = (Canvas) getWorld();
             GreenfootImage background = fancy.getBackground();
             background.setColor(Color.BLACK);
-            background.drawLine(startingX, startingY, Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());            
+            background.drawLine(startingX, startingY, Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());                
         }
     }
 

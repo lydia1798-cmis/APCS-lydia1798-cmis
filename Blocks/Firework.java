@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Firework extends AllBrushes
 { //EXPLODE
     private GreenfootImage img;
-    
+
     public Firework(Color color){
         super(color);
         this.color = color;
@@ -15,28 +15,31 @@ public class Firework extends AllBrushes
 
     public void Trail(){
         if(isFollowing == true && Greenfoot.getMouseInfo() != null){         
-            MyWorld fancy = (MyWorld) getWorld();
+            
+            Canvas fancy = (Canvas) getWorld();
             GreenfootImage background = fancy.getBackground();
             background.setColor(Color.BLACK);
             background.drawLine(startingX, startingY, Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
         }
     }
-    
+
     public void wasKeyPressed(){
         String keyPressed = Greenfoot.getKey();
-        if(keyPressed != null && keyPressed.equals("a")){
+        if(keyPressed != null && keyPressed.equals("space")){
             if(isFollowing == true){
                 isFollowing = false;
             }
             else{
                 isFollowing = true;
+                startingX = Greenfoot.getMouseInfo().getX();
+                startingY = Greenfoot.getMouseInfo().getY();
             }
         }
     } 
-    
+
     public void followMouse(){                                        
         if(Greenfoot.getMouseInfo() != null && isFollowing == true){
-            setLocation(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());            
+            setLocation(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());               
         }
     }
 
@@ -44,8 +47,7 @@ public class Firework extends AllBrushes
     {  
         wasKeyPressed();  
         followMouse(); 
-        //Trail();
+        Trail();
     }
 
-       
 }

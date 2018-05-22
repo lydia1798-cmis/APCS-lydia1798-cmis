@@ -11,7 +11,7 @@ public class shape extends AllBrushes
 
     public void Trail(){
         if(isFollowing == true && Greenfoot.getMouseInfo() != null){         
-            MyWorld fancy = (MyWorld) getWorld();
+            Canvas fancy = (Canvas) getWorld();
             GreenfootImage background = fancy.getBackground();
         }
     }

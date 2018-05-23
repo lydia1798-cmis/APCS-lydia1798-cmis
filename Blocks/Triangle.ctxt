@@ -1,7 +1,7 @@
 #BlueJ class context
-comment0.target=shape
-comment1.params=color\ w\ l
-comment1.target=shape(greenfoot.Color,\ int,\ int)
+comment0.target=Triangle
+comment1.params=color\ w
+comment1.target=Triangle(greenfoot.Color,\ int)
 comment2.params=
 comment2.target=void\ Trail()
 comment3.params=

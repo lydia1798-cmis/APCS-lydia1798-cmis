@@ -2,6 +2,8 @@
 comment0.target=Canvas
 comment1.params=
 comment1.target=Canvas()
-comment2.params=
-comment2.target=void\ act()
-numComments=3
+comment2.params=brush
+comment2.target=void\ setBrush(AllBrushes)
+comment3.params=
+comment3.target=void\ act()
+numComments=4

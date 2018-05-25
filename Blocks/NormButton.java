@@ -1,11 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class TriButton extends Actor
+public class NormButton extends Actor
 {
     private GreenfootImage img = new GreenfootImage(120, 50);
     private Canvas canvas;
 
-    public TriButton(){
+    public NormButton(){
         img.setColor(Color.PINK);
         img.drawRect(0, 0, 120, 50);
         img.fillRect(0, 0, 120, 50);

@@ -3,11 +3,12 @@ public class Triangle extends AllBrushes
 {
     private GreenfootImage img;
     private int w;
+    private Color color;
 
     public Triangle(Color color, int w){
         super(color);
         this.w = w;
-        img.setColor(color);
+        this.color = color;
     }
 
     public void Trail(){

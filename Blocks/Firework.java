@@ -1,24 +1,28 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Firework extends AllBrushes
-{ //EXPLODE
-    private GreenfootImage img;
-
+{ //EXPLODE    
+    private Color color;    
+    GreenfootImage background;
+    GreenfootImage img;
+    
     public Firework(Color color){
         super(color);
         this.color = color;
         img = new GreenfootImage(5, 5);
-        img.setColor(color);
+        img.setColor(Color.BLACK);
         img.fill();
         setImage(img);
     }
 
+    public void addedToWorld(World canvas){
+         Canvas worldCanvas = (Canvas) canvas;
+         background = worldCanvas.getBackground();
+         background.setColor(color);
+    }
+
     public void Trail(){
-        if(isFollowing == true && Greenfoot.getMouseInfo() != null){         
-            
-            Canvas fancy = (Canvas) getWorld();
-            GreenfootImage background = fancy.getBackground();
-            background.setColor(Color.BLACK);
+        if(isFollowing == true && Greenfoot.getMouseInfo() != null){              
             background.drawLine(startingX, startingY, Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
         }
     }

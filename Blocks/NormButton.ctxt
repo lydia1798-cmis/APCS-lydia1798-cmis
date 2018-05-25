@@ -1,7 +1,7 @@
 #BlueJ class context
-comment0.target=TriButton
+comment0.target=NormButton
 comment1.params=
-comment1.target=TriButton()
+comment1.target=NormButton()
 comment2.params=
 comment2.target=void\ act()
 numComments=3

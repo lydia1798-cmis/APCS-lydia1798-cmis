@@ -5,7 +5,7 @@ public class Firework extends AllBrushes
     private Color color;    
     GreenfootImage background;
     GreenfootImage img;
-    
+
     public Firework(Color color){
         super(color);
         this.color = color;
@@ -16,33 +16,39 @@ public class Firework extends AllBrushes
     }
 
     public void addedToWorld(World canvas){
-         Canvas worldCanvas = (Canvas) canvas;
-         background = worldCanvas.getBackground();
-         background.setColor(color);
+        Canvas worldCanvas = (Canvas) canvas;
+        background = worldCanvas.getBackground();
+        background.setColor(color);
     }
 
     public void Trail(){
-        if(isFollowing == true && Greenfoot.getMouseInfo() != null){              
-            background.drawLine(startingX, startingY, Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
+        if(isFollowing == true && Greenfoot.getMouseInfo() != null){   
+            while(Greenfoot.getKey() == "enter"){
+                background.drawLine(startingX, startingY, Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
+            }
         }
     }
 
     public void wasKeyPressed(){
-        String keyPressed = Greenfoot.getKey();
-        if(keyPressed != null && keyPressed.equals("space")){
-            if(isFollowing == true){
-                isFollowing = false;
+        String keyPressed = Greenfoot.getKey(); 
+        if(Greenfoot.getMouseInfo() != null){
+            int x = Greenfoot.getMouseInfo().getX();
+            int y = Greenfoot.getMouseInfo().getY();
+            if(keyPressed != null && keyPressed.equals("space")){
+                if(isFollowing == true){
+                    isFollowing = false;
+                }
+                else{
+                    isFollowing = true;
+                    startingX = x;
+                    startingY = y;
+                }
             }
-            else{
-                isFollowing = true;
-                startingX = Greenfoot.getMouseInfo().getX();
-                startingY = Greenfoot.getMouseInfo().getY();
-            }
-        }
-    } 
+        } 
+    }
 
     public void followMouse(){                                        
-        if(Greenfoot.getMouseInfo() != null && isFollowing == true){
+        if(Greenfoot.getMouseInfo() != null ){
             setLocation(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());               
         }
     }

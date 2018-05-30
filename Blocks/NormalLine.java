@@ -44,7 +44,7 @@ public class NormalLine extends AllBrushes
             GreenfootImage background = fancy.getBackground();
             background.setColor(Color.BLACK);
             background.drawLine(startingX, startingY, Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());                
-        }
+        } 
     }
 
     public void wasKeyPressed(){
